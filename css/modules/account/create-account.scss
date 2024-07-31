@@ -1,0 +1,264 @@
+.woocommerce-account {
+  .body-container {
+    padding: 0 0 24px 0;
+    background: var(--light-surface-container-low);
+
+    input {
+      padding: 8px;
+      border-radius: 0 !important;
+      border: 1px solid var(--light-outline-variant) !important;
+    }
+
+    .content.row-container {
+      max-width: 1520px;
+      margin: 0 auto;
+      padding: 24px 40px;
+      margin-top: 24px;
+      @media (max-width: 600px) {
+        padding: 16px 16px;
+      }
+      background-color: var(--light-surface-container);
+      border-radius: 12px;
+      border: 1px solid var(--light-outline-variant);
+
+      .woocommerce {
+        // WooCommerce component styling
+        nav.woocommerce-MyAccount-navigation {
+          padding: 16px;
+          @media (max-width: 600px) {
+            padding: 16px 8px;
+          }
+          border-radius: 5px;
+          ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            li {
+              margin: 8px 0;
+              &.woocommerce-MyAccount-navigation-link {
+                a {
+                  background: var(--light-surface-container-lowest);
+                  border: 1px solid var(--light-outline-variant);
+                  display: block;
+                  padding: 16px;
+                  color: var(--darkGrey) !important;
+                  text-decoration: none;
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                }
+                &.is-active {
+                  font-weight: bold;
+                  a {
+                    background: var(--light-surface-container-high);
+                  }
+                }
+              }
+            }
+          }
+        }
+        .woocommerce-MyAccount-navigation-link--upgrade-account {
+          a {
+            &::before {
+              content: none !important;
+            }
+          }
+        }
+        .woocommerce-MyAccount-content {
+          padding: 20px;
+          margin-top: 20px;
+          background: var(--light-surface-container-lowest);
+          border: 1px solid var(--light-outline-variant);
+          border-radius: 5px;
+          font-size: 16px;
+          color: #555;
+
+          a {
+            color: #007bff;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          .woocommerce-notices-wrapper {
+            margin-bottom: 15px;
+          }
+          .woocommerce-Button {
+            margin-top: 16px !important;
+          }
+          .woocommerce-Addresses {
+            padding: 16px 0 !important;
+          }
+          address {
+            padding-top: 8px;
+            line-height: 1.5rem;
+            font-style: normal;
+          }
+          h2 {
+            margin: 16px 0;
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: 0.05rem;
+            color: var(--light-on-surface);
+          }
+
+          // order actions buttons
+          .woocommerce-orders-table__cell-order-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+          }
+          // requisition list
+          .wwp_requisition_list_main {
+            .wwp_requisition_list {
+              .add_new_list,
+              .open_list,
+              .delete_list {
+                background-color: var(--light-primary);
+                padding: 8px 24px;
+                color: var(--light-on-primary);
+                border: none;
+                border-radius: 50px;
+                cursor: pointer;
+                &:hover {
+                  filter: brightness(0.8);
+                }
+              }
+              .delete_list {
+                background: none !important;
+                border: 1px solid var(--light-primary);
+                color: var(--light-primary);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// wholesale account styling
+.wwp_wholesaler_registration {
+  background: var(--light-surface-container-lowest);
+  padding: 0 24px 24px 24px;
+  border: 1px solid var(--light-outline-variant);
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 24px auto 0 auto;
+
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 40px;
+    color: var(--light-on-surface);
+  }
+  form {
+    .woocommerce-form-row {
+      margin: 16px 0;
+    }
+    label {
+      color: var(--light-on-surface-variant);
+    }
+    input,
+    select {
+      display: block;
+      width: 100%;
+      height: 40px;
+      padding: 8px;
+      border: 1px solid var(--light-outline-variant);
+      border-radius: 0 !important;
+      margin-top: 4px;
+    }
+    #wwp_wholesaler_copy_billing_address {
+      display: inline-block;
+      height: 24px;
+      width: 24px;
+      position: relative;
+      top: 8px;
+    }
+  }
+}
+
+.wholesale-login-page {
+  .row-container {
+    background: none !important;
+    border: none !important;
+  }
+  .wp-block-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 16px;
+      color: var(--light-on-surface);
+    }
+    p,
+    li {
+      margin-top: 8px;
+
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: var(--light-on-surface-variant);
+    }
+    ul,
+    ol {
+      margin-left: 24px;
+      li {
+      }
+    }
+  }
+  .woocommerce {
+    .u-columns {
+      h2 {
+        display: none;
+      }
+      form {
+        margin: 0 !important;
+      }
+      .col-1 {
+        position: sticky;
+        top: 0;
+      }
+      .col-2 {
+        display: none;
+      }
+    }
+  }
+}
+.logged-in {
+  .wp-block-columns {
+    grid-template-columns: 1fr;
+    .process-content {
+      display: none !important;
+    }
+  }
+}
+
+// quote page
+#afrfq_update_quote_btn {
+  background: none !important;
+  color: var(--light-primary) !important;
+  border: 1px solid var(--light-primary);
+  margin-bottom: 12px;
+  &:hover {
+    background: var(--light-primary) !important;
+    color: var(--light-on-primary) !important;
+  }
+}
+.addify {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  .return-to-shop {
+    .button {
+      padding: 12px 16px !important;
+      display: inline-block !important;
+      margin-top: 16px;
+    }
+  }
+}

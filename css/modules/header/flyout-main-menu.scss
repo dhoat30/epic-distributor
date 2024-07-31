@@ -1,0 +1,328 @@
+//  navbar
+.main-navbar-section {
+  border-top: 1px solid var(--light-outline-variant);
+  border-bottom: 1px solid var(--light-outline-variant);
+  background-color: var(--light-surface-container-lowest);
+
+  @media (max-width: 1300px) {
+    .primary-button {
+      display: none;
+    }
+  }
+  .mobile-menu-wrapper {
+    display: none;
+    @media (max-width: 1300px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      .mobile-logo-header {
+      }
+    }
+  }
+  .navbar {
+    position: relative;
+    @media (min-width: 1300px) {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+    }
+    .mobile-logo-wrapper {
+      display: none;
+    }
+    .account-button {
+      display: none;
+    }
+    #main-menu {
+      .menu {
+        display: flex;
+        justify-content: space-between;
+
+        & > .current_page_item,
+        & > .current-menu-item {
+          & > a {
+            @media (min-width: 1300px) {
+              border-bottom: 2px solid var(--light-tertiary);
+            }
+            @media (max-width: 1300px) {
+              background-color: var(--light-surface-container-high);
+            }
+          }
+        }
+        > .menu-item-has-children > a::after {
+          content: url('data:image/svg+xml,<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 16.5C11.8082 16.5 11.6162 16.4267 11.4698 16.2803L3.9698 8.7803C3.67673 8.48723 3.67673 8.01267 3.9698 7.7198C4.26286 7.42692 4.73742 7.42673 5.0303 7.7198L12 14.6895L18.9698 7.7198C19.2629 7.42673 19.7374 7.42673 20.0303 7.7198C20.3232 8.01286 20.3234 8.48742 20.0303 8.7803L12.5303 16.2803C12.3839 16.4267 12.1919 16.5 12 16.5Z" fill="%23291715"/></svg>');
+          display: inline-block;
+          font-size: 0;
+          line-height: 0;
+          position: absolute;
+          right: -28px;
+          top: calc(50% + 1px);
+          transform: translate(0, -50%);
+          transition: var(--transition);
+          @media (max-width: 1300px) {
+            right: 0;
+          }
+        }
+        .menu-item-has-children.open > a::after {
+          top: calc(30% - 2px) !important;
+          transform: scaleY(-1);
+          transition: var(--transition) !important;
+        }
+        > .arrow-rotated > a::after {
+          transform: scaleY(-1) !important;
+          top: calc(30% - 2px);
+        }
+        & > .menu-item {
+          box-sizing: border-box !important;
+
+          & > a {
+            position: relative;
+            padding: 12px 0;
+            display: inline-block;
+            margin: 0 8px;
+            text-decoration: none;
+            color: var(--light-on-surface);
+            transition: var(--transition);
+            @media (min-width: 1300px) {
+              &:hover {
+                transition: var(--transition);
+                &::before {
+                  content: "";
+                  width: 0%;
+                  height: 0;
+                  width: 100%;
+                  height: 2px;
+                  background: var(--light-outline);
+                  position: absolute;
+                  bottom: 0px;
+                }
+              }
+            }
+          }
+          .show-mega-menu {
+            top: 48px !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            transition: all 0.3s ease-in-out !important;
+          }
+          > .sub-menu {
+            transition: all 0.3s ease-in-out !important;
+            box-sizing: border-box !important;
+            position: absolute;
+            background: var(--light-surface-container);
+            border: 1px solid var(--light-outline-variant);
+            width: 100%;
+            box-shadow: var(--boxShadow);
+            padding: 24px;
+            z-index: 6000;
+            left: 0;
+
+            @media (min-width: 1300px) {
+              max-height: 70vh;
+              display: block;
+              gap: 40px;
+              min-height: 500px;
+              overflow: auto;
+              top: 80px;
+              opacity: 0;
+              visibility: hidden;
+            }
+            // 2nd level
+            .menu-item-has-children {
+              > a::after {
+                content: url('data:image/svg+xml,<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 16.5C11.8082 16.5 11.6162 16.4267 11.4698 16.2803L3.9698 8.7803C3.67673 8.48723 3.67673 8.01267 3.9698 7.7198C4.26286 7.42692 4.73742 7.42673 5.0303 7.7198L12 14.6895L18.9698 7.7198C19.2629 7.42673 19.7374 7.42673 20.0303 7.7198C20.3232 8.01286 20.3234 8.48742 20.0303 8.7803L12.5303 16.2803C12.3839 16.4267 12.1919 16.5 12 16.5Z" fill="%23291715"/></svg>');
+
+                font-size: 0;
+                line-height: 0;
+                rotate: -90deg;
+                position: absolute;
+                right: 16px;
+              }
+            }
+            .menu-item {
+              width: 300px;
+              > a {
+                position: relative;
+                padding: 16px 16px;
+                display: inline-block;
+                min-width: 300px;
+                color: var(--light-on-surface);
+                text-decoration: none;
+                &:hover {
+                  background: var(--light-surface-container-high);
+                }
+              }
+              .sub-menu {
+                position: absolute;
+                left: 320px;
+                width: calc(100% - 320px);
+                height: auto;
+                min-height: 100%;
+                top: 0;
+                // display: block;
+                background: var(--light-surface-container-lowest);
+                display: none;
+
+                li {
+                  width: 100%;
+                  display: block;
+                  display: flex;
+                  flex-direction: column;
+                }
+                a {
+                  display: block;
+                  padding: 16px 32px;
+
+                  &:hover {
+                    background: var(--light-surface-container-high);
+                  }
+                }
+                .sub-menu {
+                  display: block;
+                  width: 100%;
+                  height: auto;
+                  padding-left: 16px;
+                  position: static;
+                  background-color: var(--light-surface-container-highest);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1300px) {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      background: var(--light-surface-container);
+      width: 100%;
+      max-width: 350px;
+      height: 100vh;
+      z-index: 11000;
+      transform: translateX(-100%);
+      transition: transform 0.5s ease;
+      overflow: auto;
+      border: 1px solid var(--light-outline-variant);
+      &.open {
+        transform: translateX(0);
+      }
+      .mobile-logo-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px;
+        background: var(--light-surface-container);
+        a {
+          position: relative;
+          text-decoration: none;
+        }
+        img {
+        }
+        svg {
+          cursor: pointer;
+        }
+      }
+      .menu-item-has-children > a::after {
+        content: url('data:image/svg+xml,<svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 16.5C11.8082 16.5 11.6162 16.4267 11.4698 16.2803L3.9698 8.7803C3.67673 8.48723 3.67673 8.01267 3.9698 7.7198C4.26286 7.42692 4.73742 7.42673 5.0303 7.7198L12 14.6895L18.9698 7.7198C19.2629 7.42673 19.7374 7.42673 20.0303 7.7198C20.3232 8.01286 20.3234 8.48742 20.0303 8.7803L12.5303 16.2803C12.3839 16.4267 12.1919 16.5 12 16.5Z" fill="%23052444"/></svg>');
+        display: inline-block;
+        font-size: 1.2rem;
+        position: absolute;
+        right: 0;
+        top: 32px !important;
+        transform: translate(0, -50%);
+        z-index: 1000;
+      }
+      .menu {
+        flex-direction: column;
+        justify-content: flex-start;
+        border-bottom: 1px solid var(--light-outline-variant);
+        padding: 8px;
+        // first level
+        & > .menu-item {
+          position: relative;
+          width: 100%;
+          & > a {
+            margin: 0 !important;
+            padding: 16px 8px !important;
+            display: block;
+            width: 100% !important;
+            border-top: 1px solid var(--light-outline-variant);
+            color: var(--light-on-surface) !important;
+          }
+          .sub-menu {
+            overflow: hidden !important;
+            position: static !important;
+            box-shadow: none !important;
+            display: none;
+            border-radius: 12px;
+            padding: 0 !important;
+            top: 0;
+            width: 100% !important;
+            border: none !important;
+            border-radius: 0;
+            background: var(--light-surface-container) !important;
+            .menu-item {
+              a {
+                padding: 16px 0 16px 16px !important;
+                border-top: 1px solid var(--light-outline-variant);
+                display: block;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                color: var(--light-on-surface-variant) !important;
+                &:hover {
+                  background: var(--surfaceHighest);
+                }
+                &::after {
+                  rotate: 0deg !important;
+                }
+              }
+            }
+            > .menu-item-has-children > a::after {
+              content: url('data:image/svg+xml,<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 16.5C11.8082 16.5 11.6162 16.4267 11.4698 16.2803L3.9698 8.7803C3.67673 8.48723 3.67673 8.01267 3.9698 7.7198C4.26286 7.42692 4.73742 7.42673 5.0303 7.7198L12 14.6895L18.9698 7.7198C19.2629 7.42673 19.7374 7.42673 20.0303 7.7198C20.3232 8.01286 20.3234 8.48742 20.0303 8.7803L12.5303 16.2803C12.3839 16.4267 12.1919 16.5 12 16.5Z" fill="%23291715"/></svg>');
+              display: inline-block;
+              font-size: 0;
+              line-height: 0;
+              position: absolute;
+              right: 16px;
+              top: calc(50% + 1px);
+              transform: translate(0, -50%);
+            }
+            > .arrow-rotated > a::after {
+              transform: rotate(180deg) !important;
+              top: calc(30% + 1px);
+            }
+            .sub-menu {
+              background-color: var(--light-surface-container) !important;
+              a {
+                padding: 16px 16px 16px 32px !important;
+                font-size: 0.9rem;
+                color: var(--light-on-surface-variant) !important;
+              }
+            }
+          }
+        }
+      }
+      .account-button {
+        width: 100%;
+        display: block;
+        margin: 16px 0;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        justify-content: center;
+        svg {
+          path {
+            fill: var(--light-on-primary-container) !important;
+          }
+        }
+        span {
+          display: inline;
+          width: auto !important;
+        }
+      }
+    }
+  }
+}
