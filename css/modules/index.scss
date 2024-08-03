@@ -1,0 +1,100 @@
+// index page styling
+.page-template-default {
+  .index-page {
+    min-height: 60vh;
+    background-color: var(--light-surface-container-low);
+    padding-bottom: 40px;
+    .title-wrapper {
+      background-color: var(--light-surface-container-low);
+      border-bottom: 1px solid var(--light-outline-variant);
+      padding-bottom: 40px;
+      padding-top: 40px;
+      @media (max-width: 600px) {
+        padding-top: 24px;
+        padding-bottom: 24px;
+      }
+      #breadcrumbs {
+        text-align: center;
+      }
+    }
+    .content {
+      h2 {
+        font-size: 2rem;
+        margin-top: 24px;
+        color: var(--light-on-surface);
+      }
+      h3 {
+        font-size: 1.5rem;
+        margin-top: 24px;
+        color: var(--light-on-surface);
+      }
+      p,
+      li {
+        font-size: 1rem;
+        color: var(--light-on-surface-variant);
+        line-height: 1.5rem;
+        margin: 8px 0;
+      }
+      ul {
+        list-style: disc;
+        margin: 0 0 0 24px;
+      }
+      ol {
+        margin: 0 0 0 24px;
+      }
+
+      .wp-block-button {
+        margin-top: 40px;
+      }
+      .has-text-align-center {
+        text-align: center;
+      }
+      margin-top: 24px;
+      // row layout styling
+      .row-layout {
+        padding-top: 24px;
+        padding-bottom: 24px;
+      }
+      .row-layout:nth-child(odd) {
+        background-color: var(--light-surface-container-high);
+      }
+      .row-layout:nth-child(even) {
+        background-color: var(--light-surface-container);
+      }
+      hr {
+        margin: 24px 0;
+      }
+      // block columns styling
+      .wp-block-columns {
+        display: grid;
+        grid-template-columns: auto 400px;
+        gap: 40px;
+        justify-content: center;
+        align-items: start;
+        p {
+          margin: 8px 0;
+          a {
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      // used for forms
+      .wp-block-group {
+        background-color: var(--light-surface-container-lowest);
+        max-width: 800px;
+        padding: 24px;
+        margin: 0 auto;
+        border-radius: 12px;
+        border: 1px solid var(--light-outline-variant);
+        h2 {
+          font-size: 1.5rem;
+          margin: 16px 0;
+        }
+      }
+    }
+  }
+}

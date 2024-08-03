@@ -23,12 +23,26 @@ do_action('webduel_hero_section');
 
     </div>
 
-    <div class="content row-container">
-        <?php the_content();
-            //    row layouts 
-                        get_template_part('inc/templates/row-layout');
-                    
+    <div class="content-wrapper ">
+        <?php 
+        if(get_the_content()){ 
             ?>
+        <div class="content row-container">
+            <?php 
+        the_content(); 
+            ?>
+        </div>
+        <?php 
+        }
+        ?>
+
+
+        <div class="row-layout-wrapper">
+            <?php 
+                        //    row layouts 
+                        get_template_part('inc/templates/row-layout/row-layout');
+            ?>
+        </div>
     </div>
 
     <?php

@@ -18,7 +18,9 @@
   .woocommerce-breadcrumb {
     margin-bottom: 8px !important;
     line-height: 1.5rem;
+    padding: 0 !important;
   }
+
   // product sku
   .entry-summary {
     background-color: var(--light-surface-container-lowest);
@@ -330,11 +332,20 @@
 // add to cart section
 
 .back-share-btn-wrapper {
-  padding: 0 0 0 0;
+  padding: 16px 0 16px 0;
+  @media (max-width: 600px) {
+    padding: 8px 0 8px 0;
+  }
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-
+  .back-wrapper {
+    a {
+      span {
+        margin-left: 4px;
+      }
+    }
+  }
   .share-wrapper {
     position: relative;
     .share-button {

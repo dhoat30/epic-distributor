@@ -1,6 +1,7 @@
 <?php 
 // Assume you have some ACF fields you want to pass to the template
           $title = get_sub_field('title');
+          $subtitle= get_sub_field('subtitle');
             $products = get_sub_field('select_product');
           $ctaData = get_sub_field('cta');
           // Assume $products is your array of WP_Post objects
@@ -10,18 +11,35 @@
             }
 ?>
 
-<section class="product-list-container ">
+<section class="product-list-container  ">
     <?php 
   // check if the section title exists 
   if($title){ 
       ?>
     <div class="row-container">
-        <h2 class="center-align h3"><?php echo $title;  ?></h2>
-    </div>
-    <?php 
+        <div class="title-wrapper">
+            <div class="title-subtile-wrapper">
+                <h2 class="h4 title"><?php echo $title;  ?></h2>
+                <h3 class="body1 subtitle"><?php echo $subtitle; ?></h3>
+            </div>
+            <?php 
+                if($ctaData){
+                ?>
+            <a class="link-button section-link" href="<?php echo $ctaData['url']; ?>">
+                <span><?php echo $ctaData['title'];  ?></span>
+                <svg height="18px" viewBox="0 0 128 128" width="18px">
+                    <path id="Right_Arrow_4_" fill="white" stroke="white"
+                        d="m44 108c-1.023 0-2.047-.391-2.828-1.172-1.563-1.563-1.563-4.094 0-5.656l37.172-37.172-37.172-37.172c-1.563-1.563-1.563-4.094 0-5.656s4.094-1.563 5.656 0l40 40c1.563 1.563 1.563 4.094 0 5.656l-40 40c-.781.781-1.805 1.172-2.828 1.172z" />
+                </svg>
+            </a>
+            <?php } ?>
+        </div>
+
+
+        <?php 
   }
   ?>
-    <?php
+        <?php
         // Ensure WooCommerce is active
         if (class_exists('WooCommerce')) {
 
@@ -51,11 +69,5 @@
             wp_reset_postdata();
         }
     ?>
-    <?php 
-    if($ctaData){
-    ?>
-    <a class="border-button section-link" href="<?php echo $ctaData['url']; ?>">
-        <span><?php echo $ctaData['title'];  ?></span>
-    </a>
-    <?php } ?>
+    </div>
 </section>

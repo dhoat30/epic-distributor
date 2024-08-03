@@ -21,7 +21,7 @@ switch ($button_color) {
             "text_color" => "var(--light-on-tertiary)"
         );
 
-    case "dark_blue":
+    case "light_green":
         return array(
             "background_color" => "var(--dark-tertiary)",
             "text_color" => "var(--dark-on-tertiary)"
@@ -189,12 +189,25 @@ switch ($button_color) {
                                 style="color: <?php echo $smallCardFirstTextColor ? $smallCardFirstTextColor : "white"; ?>">
                                 <?php echo $smallCardFirstSubtitle;  ?>
                             </p>
+
+                            <?php
+                    if($smallCardFirstRegularPrice ){
+                    ?>
                             <div class="price-wrapper center-align">
                                 <span class="regular-price h5"
                                     style="text-decoration: <?php echo $smallCardFirstSalePrice ? "line-through" : "none"; ?>; color: <?php echo $smallCardFirstTextColor ? $smallCardFirstTextColor : "white"; ?> ">$<?php echo $smallCardFirstRegularPrice;  ?></span>
+                                <?php 
+                         if($smallCardFirstSalePrice){
+                             ?>
                                 <span class="sale-price h5"
                                     style="color: <?php echo $smallCardFirstTextColor ? $smallCardFirstTextColor : "white"; ?>">$<?php echo $smallCardFirstSalePrice;  ?></span>
+                                <?php 
+                         }  
+                         ?>
                             </div>
+                            <?php } ?>
+
+
                             <div class="button-wrapper">
                                 <a href="<?php echo $smallCardFirstLink; ?>" class="link-button "
                                     style="color: <?php echo $smallCardFirstTextColor ? $smallCardFirstTextColor : "white"; ?>">
@@ -243,12 +256,23 @@ switch ($button_color) {
                                 style="color: <?php echo $smallCardSecondTextColor ? $smallCardSecondTextColor : "white"; ?>">
                                 <?php echo $smallCardSecondSubtitle;  ?>
                             </p>
+                            <?php
+                            if($smallCardSecondRegularPrice ){
+                                ?>
                             <div class="price-wrapper center-align">
                                 <span class="regular-price h5"
                                     style="text-decoration: <?php echo $smallCardSecondSalePrice ? "line-through" : "none"; ?>; color: <?php echo $smallCardSecondTextColor ? $smallCardSecondTextColor : "white"; ?> ">$<?php echo $smallCardSecondRegularPrice;  ?></span>
+                                <?php 
+                         if($smallCardSecondSalePrice){
+                             ?>
                                 <span class="sale-price h5"
                                     style="color: <?php echo $smallCardSecondTextColor ? $smallCardSecondTextColor : "white"; ?>">$<?php echo $smallCardSecondSalePrice;  ?></span>
+                                <?php 
+                         }  
+                         ?>
                             </div>
+                            <?php } ?>
+
                             <div class="button-wrapper">
                                 <a href="<?php echo $smallCardSecondLink; ?>" class="link-button "
                                     style="color: <?php echo $smallCardSecondTextColor ? $smallCardSecondTextColor : "white"; ?>">

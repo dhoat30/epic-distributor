@@ -11,16 +11,17 @@
 
 ?>
 
-<section class="row-container row-layout">
+<section class=" row-layout">
     <?php 
     // check if the section title exists 
     if($sectionTitle){ 
         ?>
-    <h2 class="center-align h3"><?php echo $sectionTitle;  ?></h2>
+    <h2 class="center-align h3 bold"><?php echo $sectionTitle;  ?></h2>
     <?php 
     }
     ?>
-    <div class="wrapper" style="flex-direction:<?php echo $imageAlignment === "left" ? "row-reverse" : "row";  ?>">
+    <div class="wrapper row-container"
+        style="flex-direction:<?php echo $imageAlignment === "left" ? "row-reverse" : "row";  ?>">
         <div class="content-wrapper">
             <div class="icon-wrapper">
                 <?php 
@@ -44,7 +45,7 @@
             }
                 ?>
             </div>
-            <h3 class="h3"><?php  echo $rowTitle;  ?></h3>
+            <h2 class="h2 title"><?php  echo $rowTitle;  ?></h2>
             <div class="body1"><?php echo $description;  ?></div>
             <?php
                 if(!empty($ctaData)) {
@@ -88,7 +89,7 @@
         <div class="image-wrapper image-wrapper-<?php echo $trailingValue;  ?>">
             <picture>
                 <source media="(min-width:600px)" srcset="<?php echo $image['sizes']['large']; ?>">
-                <img data-lazy="<?php echo $image['sizes']['woocommerce_thumbnail']; ?>"
+                <img src="<?php echo $image['sizes']['woocommerce_thumbnail']; ?>"
                     alt="<?php echo $image['alt'] ? $image['alt'] : $rowTitle; ?>" width="100%" height="400px" defer
                     loading="lazy">
             </picture>

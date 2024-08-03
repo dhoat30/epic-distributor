@@ -2,67 +2,7 @@
 <footer>
 
     <div class="flex-container row-container">
-        <div class="item">
-            <?php
-                    $logo = get_field('dark_logo', 'option');
-                    if($logo){ 
-                        ?>
-            <a href="/">
-                <img src="<?php echo $logo['sizes']['thumbnail']; ?>" alt="<?php echo $logo['alt']; ?>" width="192px"
-                    loading="lazy" height="50px" />
-            </a>
-            <?php 
-                    }
-                ?>
 
-            <div class="hubspot-form">
-                <div class="h5 title">
-                    stay up to date
-                </div>
-
-
-                <!-- Delayed HubSpot Forms Embed Code -->
-                <script type="text/javascript">
-                setTimeout(function() {
-                    var hsFormsScript = document.createElement('script');
-                    hsFormsScript.charset = "utf-8";
-                    hsFormsScript.src = "//js.hsforms.net/forms/embed/v2.js";
-                    document.body.appendChild(hsFormsScript);
-
-                    hsFormsScript.onload = function() {
-                        hbspt.forms.create({
-                            region: "na1",
-                            portalId: "46563332",
-                            formId: "e4f2db79-bf92-4626-9844-67a4304dd523"
-                        });
-                    };
-                }, 5000); // Delay in milliseconds
-                </script>
-
-
-            </div>
-            <?php 
-            $socialMediaData = get_field('social_links', 'option');
-            if(!empty($socialMediaData)){ 
-                ?>
-            <div class="social-media-wrapper">
-                <?php 
-                foreach($socialMediaData as $socialMedia){
-                    ?>
-                <a class="item" href="<?php echo $socialMedia['link']; ?>" target="_blank" rel="nofollow">
-                    <img src="<?php echo $socialMedia['social_media_icon']['url']; ?>"
-                        alt="<?php echo $socialMedia['social_media_name']; ?>" width="40px" height="40px" />
-                </a>
-                <?php
-                    }
-                    ?>
-
-            </div>
-            <?php 
-            }
-            ?>
-
-        </div>
         <div class="services-nav item">
             <div class="h5 title">
                 Shop by category
@@ -144,6 +84,67 @@
                 } 
                 ?>
         </div>
+        <div class="item">
+            <?php
+                    $logo = get_field('dark_logo', 'option');
+                    if($logo){ 
+                        ?>
+            <a href="/">
+                <img src="<?php echo $logo['sizes']['thumbnail']; ?>" alt="<?php echo $logo['alt']; ?>" width="192px"
+                    loading="lazy" height="50px" />
+            </a>
+            <?php 
+                    }
+                ?>
+
+            <div class="hubspot-form">
+                <div class="h5 title">
+                    stay up to date
+                </div>
+
+
+                <!-- Delayed HubSpot Forms Embed Code -->
+                <script type="text/javascript">
+                setTimeout(function() {
+                    var hsFormsScript = document.createElement('script');
+                    hsFormsScript.charset = "utf-8";
+                    hsFormsScript.src = "//js.hsforms.net/forms/embed/v2.js";
+                    document.body.appendChild(hsFormsScript);
+
+                    hsFormsScript.onload = function() {
+                        hbspt.forms.create({
+                            region: "na1",
+                            portalId: "46953524",
+                            formId: "cc2a117a-42ca-4bfc-a34a-d8f3f6929a91"
+                        });
+                    };
+                }, 5000); // Delay in milliseconds
+                </script>
+
+
+            </div>
+            <?php 
+            $socialMediaData = get_field('social_links', 'option');
+            if(!empty($socialMediaData)){ 
+                ?>
+            <div class="social-media-wrapper">
+                <?php 
+                foreach($socialMediaData as $socialMedia){
+                    ?>
+                <a class="item" href="<?php echo $socialMedia['link']; ?>" target="_blank" rel="nofollow">
+                    <img src="<?php echo $socialMedia['social_media_icon']['url']; ?>"
+                        alt="<?php echo $socialMedia['social_media_name']; ?>" width="40px" height="40px" />
+                </a>
+                <?php
+                    }
+                    ?>
+
+            </div>
+            <?php 
+            }
+            ?>
+
+        </div>
 
     </div>
 
@@ -151,7 +152,7 @@
     <div class="copyright-section row-container">
         <div class="columns">
             <div class="copyright">
-                ©2024 Norhtern Hospitality. All Rights Reserved
+                ©2024 Epic Distributors. All Rights Reserved
             </div>
             <div class="copyright">|</div>
             <div class="agency">

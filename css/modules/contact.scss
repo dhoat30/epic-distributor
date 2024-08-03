@@ -1,3 +1,56 @@
 .contact-us {
+  .wp-block-columns {
+    grid-template-columns: 400px 1fr !important;
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr !important;
+    }
+    > div:nth-child(1) {
+      @media (min-width: 900px) {
+        position: sticky;
+        top: 50px;
+      }
 
+      background: var(--light-primary-container);
+      padding: 16px;
+      border-radius: 12px;
+      a,
+      p,
+      strong {
+        color: var(--light-on-primary-container);
+      }
+      strong {
+        font-weight: 500;
+      }
+      a {
+        font-weight: 300;
+      }
+    }
+  }
+  .hbspt-form {
+    margin-top: 16px;
+    min-height: 414px;
+
+    @media (max-width: 497px) {
+      min-height: 522px;
+    }
+  }
+}
+
+// wholesale account
+.wholesale-account {
+  .wp-block-columns {
+    grid-template-columns: 1fr 1fr !important;
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr !important;
+    }
+    > div:nth-child(2) {
+      background: var(--light-surface-container-lowest);
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid var(--light-outline-variant);
+      margin-top: 24px;
+      position: sticky;
+      top: 50px;
+    }
+  }
 }

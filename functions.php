@@ -146,3 +146,76 @@ add_filter('wp_mail_from', function ($email) {
 add_filter('wp_mail_from_name', function ($name) {
     return 'Epic Distributors '; // Replace with your desired sender name
 });
+
+// add page slug to body class
+function add_slug_body_class($classes) {
+    if (is_singular()) {
+        global $post;
+        $classes[] = $post->post_name;
+    }
+    return $classes;
+}
+add_filter('body_class', 'add_slug_body_class');
+
+// table of content 
+function generate_toc($content) {
+    $toc = [];
+    $dom = new DOMDocument();
+    @$dom->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+    // Find all H2 elements
+    $h2Elements = $dom->getElementsByTagName('h2');
+    foreach ($h2Elements as $h2) {
+        if ($h2->hasAttribute('id')) {
+            $h2Entry = [
+                'id' => $h2->getAttribute('id'),
+                'text' => trim($h2->textContent),
+                'tag' => 'h2',
+                'subitems' => []
+            ];
+
+            // Process all sibling nodes until the next H2 is found
+            $nextNode = $h2->nextSibling;
+            while ($nextNode !== null && !($nextNode instanceof DOMElement && $nextNode->tagName === 'h2')) {
+                if ($nextNode instanceof DOMElement && $nextNode->tagName === 'h3' && $nextNode->hasAttribute('id')) {
+                    $h2Entry['subitems'][] = [
+                        'id' => $nextNode->getAttribute('id'),
+                        'text' => trim($nextNode->textContent),
+                        'tag' => 'h3'
+                    ];
+                }
+                $nextNode = $nextNode->nextSibling;
+            }
+
+            $toc[] = $h2Entry;
+        }
+    }
+
+    return $toc;
+}
+
+function webduel_toc_shortcode($atts) {
+    global $post;
+    $content = $post->post_content;
+
+    $toc = generate_toc($content);
+
+    // Build TOC HTML
+    $toc_html = '<div class="table-of-contents"><h2 class="h4">Table of Contents</h2><ul>';
+    foreach ($toc as $h2) {
+        $toc_html .= '<li><a href="#' . $h2['id'] . '">' . $h2['text'] . '</a>';
+        if (!empty($h2['subitems'])) {
+            $toc_html .= '<ul>';
+            foreach ($h2['subitems'] as $h3) {
+                $toc_html .= '<li><a href="#' . $h3['id'] . '">' . $h3['text'] . '</a></li>';
+            }
+            $toc_html .= '</ul>';
+        }
+        $toc_html .= '</li>';
+    }
+    $toc_html .= '</ul></div>';
+
+    return $toc_html;
+}
+
+add_shortcode('webduel_toc', 'webduel_toc_shortcode');

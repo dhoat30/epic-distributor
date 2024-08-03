@@ -47,7 +47,7 @@ class EveryOwlCarousel {
         $(className).slick({
             lazyLoad: lazyLoad ? 'ondemand' : "",
             infinite: true,
-            slidesToShow: 4,
+            slidesToShow: 5,
             slidesToScroll: 4,
             dots: true,
             centerMode: true,

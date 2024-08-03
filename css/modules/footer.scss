@@ -1,7 +1,7 @@
 // footer section
 footer {
   padding: 40px 0 0 0;
-  background-color: var(--light-tertiary);
+  background-color: var(--light-surface-container-highest);
 
   @media (max-width: 900px) {
     padding: 40px 0 66px 0;
@@ -23,7 +23,6 @@ footer {
     }
     .item {
       .hubspot-form {
-        margin-top: 16px;
         min-height: 200px;
         max-height: 200px;
         overflow: hidden;
@@ -43,7 +42,7 @@ footer {
       }
       .title {
         margin-bottom: 8px;
-        color: var(--dark-on-surface);
+        color: var(--light-on-surface);
         text-transform: uppercase;
       }
       .nav {
@@ -51,7 +50,7 @@ footer {
           a {
             text-decoration: none;
             cursor: pointer;
-            color: var(--dark-on-surface-variant);
+            color: var(--light-on-surface-variant);
             display: block;
             padding: 4px 0;
             font-weight: 300;
@@ -80,7 +79,7 @@ footer {
           font-size: 0.9rem;
 
           span {
-            color: var(--dark-on-surface-variant);
+            color: var(--light-on-surface-variant);
           }
           &:hover {
             span {
@@ -93,7 +92,7 @@ footer {
   }
   .logo-section {
     margin: 16px 0 0 0;
-    border-top: 1px solid var(--dark-outline);
+    border-top: 1px solid var(--light-outline);
     padding-top: 16px;
     display: flex;
     flex-direction: column;
@@ -102,7 +101,7 @@ footer {
   }
   .copyright-section {
     margin-top: 8px;
-    border-top: 1px solid var(--dark-outline-variant);
+    border-top: 1px solid var(--light-outline-variant);
     .columns {
       padding-top: 8px;
       padding-bottom: 8px;
@@ -115,7 +114,7 @@ footer {
         margin-bottom: 5px;
         a {
           font-size: var(--paragraphSize);
-          color: var(--dark-on-surface-variant) !important;
+          color: var(--light-on-surface-variant) !important;
           text-decoration: none;
 
           &:hover {
@@ -127,13 +126,13 @@ footer {
     .copyright,
     .agency {
       font-size: 0.9rem;
-      color: var(--dark-on-surface-variant);
+      color: var(--light-on-surface-variant);
       a {
         font-size: var(--paragraphSize);
-        color: var(--dark-on-surface-variant);
+        color: var(--light-on-surface-variant);
         text-decoration: none;
         strong {
-          color: var(--dark-on-surface-variant);
+          color: var(--light-on-surface-variant);
         }
         &:hover {
           text-decoration: underline;
@@ -239,7 +238,7 @@ footer {
   margin-bottom: 16px;
   cursor: pointer;
   .svg-wrapper {
-    background-color: var(--dark-on-surface-variant);
+    background-color: var(--light-on-surface-variant);
     border-radius: 50%;
     height: 40px;
     width: 40px;
@@ -267,7 +266,7 @@ footer {
     p {
       font-size: 1rem;
       line-height: 1.5rem;
-      color: var(--dark-on-surface-variant);
+      color: var(--light-on-surface-variant);
       letter-spacing: 0.03rem;
       font-weight: 300;
     }

@@ -60,7 +60,8 @@ else {
 
 <?php 
         $testimonials = get_field('testimonials', 'option');
-        if(!empty($testimonials)){
+
+        if(!empty($testimonials) && !empty($testimonials['testimonial'])){
             ?>
 <section class="testimonials-section">
     <div class="row-container">
