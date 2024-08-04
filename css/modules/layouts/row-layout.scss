@@ -397,7 +397,7 @@
     // }
   }
   .title-wrapper {
-    background: #0091b1cd;
+    background: #004d5fcd;
     display: grid;
     align-items: center;
     grid-template-columns: 1fr auto;
@@ -420,11 +420,11 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #0091b1;
+          background: #005163;
           &::after {
             content: "";
             position: absolute;
-            background: #0091b1;
+            background: #005163;
 
             top: 50%;
             right: 0;

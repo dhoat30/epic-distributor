@@ -6,7 +6,7 @@ function webduel_product_resources(){
     $brochure = get_field('brochure', $product->get_id()); 
     $informationSheet = get_field('information_sheet', $product->get_id()); 
     $userManual = get_field('user_manual', $product->get_id()); 
-    if(!$brochure || !$informationSheet || !$userManual) return;
+    if($brochure || $informationSheet || $userManual){ 
     ?>
 <section class="resources-section row-container">
     <div class="container">
@@ -28,7 +28,7 @@ function webduel_product_resources(){
     </div>
 </section>
 <?php 
-
+}
 }
 function pdf_file_html($fileUrl, $fileSize, $title){ 
 ;

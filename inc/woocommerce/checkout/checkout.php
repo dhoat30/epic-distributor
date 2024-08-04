@@ -74,87 +74,90 @@ function add_google_places_autocomplete() {
 <script>
 console.log("checkout page")
 document.addEventListener('DOMContentLoaded', function() {
-    document.addEventListener('DOMContentLoaded', function() {
-        function initializeAutocomplete() {
-            var addressFields = ['billing_address_1', 'shipping_address_1'];
 
-            addressFields.forEach(function(field) {
-                var input = document.getElementById(field);
-                console.log(input)
-                if (input) {
-                    var autocomplete = new google.maps.places.Autocomplete(input, {
-                        types: ['address']
-                    });
-                    autocomplete.setFields(['address_component']);
-                    autocomplete.addListener('place_changed', function() {
-                        var place = autocomplete.getPlace();
-                        var address1 = '';
-                        var postcode = '';
-                        var city = '';
-                        var region = ''; // Updated variable name
-                        console.log(place)
-                        for (var i = 0; i < place.address_components.length; i++) {
-                            var component = place.address_components[i];
-                            var addressType = component.types[0];
+    function initializeAutocomplete() {
+        var addressFields = ['billing_address_1', 'shipping_address_1'];
 
-                            if (addressType == 'street_number') {
-                                address1 = component.long_name;
-                            }
-                            if (addressType == 'route') {
-                                address1 += ' ' + component.long_name;
-                            }
-                            if (addressType == 'postal_code') {
-                                postcode = component.long_name;
-                            }
-                            if (addressType == 'locality') {
-                                city = component.long_name;
-                            }
-                            // Check both administrative_area_level_1 and administrative_area_level_2 for regions
-                            if (addressType == 'administrative_area_level_1' ||
-                                addressType ==
-                                'administrative_area_level_2') {
-                                region = component.long_name;
-                            }
+        addressFields.forEach(function(field) {
+            var input = document.getElementById(field);
+            console.log(input)
+            if (input) {
+                var autocomplete = new google.maps.places.Autocomplete(input, {
+                    types: ['address'],
+                    componentRestrictions: {
+                        country: 'NZ'
+                    } // Restrict to New Zealand
+
+                });
+                autocomplete.setFields(['address_component']);
+                autocomplete.addListener('place_changed', function() {
+                    var place = autocomplete.getPlace();
+                    var address1 = '';
+                    var postcode = '';
+                    var city = '';
+                    var region = ''; // Updated variable name
+                    console.log(place)
+                    for (var i = 0; i < place.address_components.length; i++) {
+                        var component = place.address_components[i];
+                        var addressType = component.types[0];
+
+                        if (addressType == 'street_number') {
+                            address1 = component.long_name;
                         }
-                        console.log(region)
-
-                        document.getElementById(field).value = address1;
-                        if (document.getElementById(field.replace('address_1',
-                                'postcode'))) {
-                            document.getElementById(field.replace('address_1',
-                                    'postcode')).value =
-                                postcode;
+                        if (addressType == 'route') {
+                            address1 += ' ' + component.long_name;
                         }
-                        if (document.getElementById(field.replace('address_1',
+                        if (addressType == 'postal_code') {
+                            postcode = component.long_name;
+                        }
+                        if (addressType == 'locality') {
+                            city = component.long_name;
+                        }
+                        // Check both administrative_area_level_1 and administrative_area_level_2 for regions
+                        if (addressType == 'administrative_area_level_1' ||
+                            addressType ==
+                            'administrative_area_level_2') {
+                            region = component.long_name;
+                        }
+                    }
+                    console.log(region)
+
+                    document.getElementById(field).value = address1;
+                    if (document.getElementById(field.replace('address_1',
+                            'postcode'))) {
+                        document.getElementById(field.replace('address_1',
+                                'postcode')).value =
+                            postcode;
+                    }
+                    if (document.getElementById(field.replace('address_1',
                             'city'))) {
-                            document.getElementById(field.replace('address_1', 'city'))
-                                .value =
-                                city;
-                        }
-                        // Update the region select field
-                        var regionSelect = document.getElementById(field.replace(
-                            'address_1',
-                            'state'));
-                        if (regionSelect) {
-                            for (var i = 0; i < regionSelect.options.length; i++) {
-                                if (regionSelect.options[i].text.toLowerCase() ===
-                                    region
-                                    .toLowerCase()) {
-                                    regionSelect.selectedIndex = i;
-                                    break;
-                                }
+                        document.getElementById(field.replace('address_1', 'city'))
+                            .value =
+                            city;
+                    }
+                    // Update the region select field
+                    var regionSelect = document.getElementById(field.replace(
+                        'address_1',
+                        'state'));
+                    if (regionSelect) {
+                        for (var i = 0; i < regionSelect.options.length; i++) {
+                            if (regionSelect.options[i].text.toLowerCase() ===
+                                region
+                                .toLowerCase()) {
+                                regionSelect.selectedIndex = i;
+                                break;
                             }
-                            jQuery(regionSelect).trigger(
-                            'change'); // For Select2 support
                         }
-                    });
-                } else {
-                    console.error(field + ' input element not found.');
-                }
-            });
-        }
-        initializeAutocomplete();
-    });
+                        jQuery(regionSelect).trigger(
+                            'change'); // For Select2 support
+                    }
+                });
+            } else {
+                console.error(field + ' input element not found.');
+            }
+        });
+    }
+    initializeAutocomplete();
 });
 </script>
 <?php

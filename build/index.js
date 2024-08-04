@@ -17,25 +17,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_GeneralModal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/GeneralModal */ "./src/modules/GeneralModal.js");
 /* harmony import */ var _modules_Modals_CartModal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/Modals/CartModal */ "./src/modules/Modals/CartModal.js");
 /* harmony import */ var _modules_Search__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/Search */ "./src/modules/Search.js");
-/* harmony import */ var _modules_MobileSearch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/MobileSearch */ "./src/modules/MobileSearch.js");
-/* harmony import */ var _modules_FacetFilter_FacetFilter__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/FacetFilter/FacetFilter */ "./src/modules/FacetFilter/FacetFilter.js");
-/* harmony import */ var _modules_FacetFilter_SortProduct__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/FacetFilter/SortProduct */ "./src/modules/FacetFilter/SortProduct.js");
-/* harmony import */ var _modules_Woocommerce_WooGallery__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/Woocommerce/WooGallery */ "./src/modules/Woocommerce/WooGallery.js");
-/* harmony import */ var _modules_Woocommerce_ProductArchive_QuickView__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/Woocommerce/ProductArchive/QuickView */ "./src/modules/Woocommerce/ProductArchive/QuickView.js");
-/* harmony import */ var _modules_Woocommerce_SingleProductTabs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/Woocommerce/SingleProductTabs */ "./src/modules/Woocommerce/SingleProductTabs.js");
-/* harmony import */ var _modules_Woocommerce_VariationSwatches_VariationSwatches__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/Woocommerce/VariationSwatches/VariationSwatches */ "./src/modules/Woocommerce/VariationSwatches/VariationSwatches.js");
-/* harmony import */ var _modules_ErrorModal_ErrorModal__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modules/ErrorModal/ErrorModal */ "./src/modules/ErrorModal/ErrorModal.js");
-/* harmony import */ var _modules_Header__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./modules/Header */ "./src/modules/Header.js");
-/* harmony import */ var _modules_Scroll_FixedNavMobile__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/Scroll/FixedNavMobile */ "./src/modules/Scroll/FixedNavMobile.js");
-/* harmony import */ var _modules_Modals_PhoneModal__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/Modals/PhoneModal */ "./src/modules/Modals/PhoneModal.js");
-/* harmony import */ var _modules_Woocommerce_AjaxOperation_AjaxAddToCart__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/Woocommerce/AjaxOperation/AjaxAddToCart */ "./src/modules/Woocommerce/AjaxOperation/AjaxAddToCart.js");
-/* harmony import */ var _modules_DesktopMenu__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/DesktopMenu */ "./src/modules/DesktopMenu.js");
-/* harmony import */ var _modules_MobileMenu__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/MobileMenu */ "./src/modules/MobileMenu.js");
-/* harmony import */ var _modules_FAQ__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./modules/FAQ */ "./src/modules/FAQ.js");
-/* harmony import */ var _modules_QuoteFeature_QuoteAjax__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./modules/QuoteFeature/QuoteAjax */ "./src/modules/QuoteFeature/QuoteAjax.js");
-/* harmony import */ var _modules_RevealEffect_RevealEffect__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./modules/RevealEffect/RevealEffect */ "./src/modules/RevealEffect/RevealEffect.js");
-/* harmony import */ var _modules_FormProcessor_FormProcessor__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./modules/FormProcessor/FormProcessor */ "./src/modules/FormProcessor/FormProcessor.js");
-/* harmony import */ var _modules_Woocommerce_QtyHandler_QtyHandler__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./modules/Woocommerce/QtyHandler/QtyHandler */ "./src/modules/Woocommerce/QtyHandler/QtyHandler.js");
+/* harmony import */ var _modules_FacetFilter_FacetFilter__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/FacetFilter/FacetFilter */ "./src/modules/FacetFilter/FacetFilter.js");
+/* harmony import */ var _modules_FacetFilter_SortProduct__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/FacetFilter/SortProduct */ "./src/modules/FacetFilter/SortProduct.js");
+/* harmony import */ var _modules_Woocommerce_WooGallery__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/Woocommerce/WooGallery */ "./src/modules/Woocommerce/WooGallery.js");
+/* harmony import */ var _modules_Woocommerce_ProductArchive_QuickView__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/Woocommerce/ProductArchive/QuickView */ "./src/modules/Woocommerce/ProductArchive/QuickView.js");
+/* harmony import */ var _modules_Woocommerce_SingleProductTabs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/Woocommerce/SingleProductTabs */ "./src/modules/Woocommerce/SingleProductTabs.js");
+/* harmony import */ var _modules_Woocommerce_VariationSwatches_VariationSwatches__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/Woocommerce/VariationSwatches/VariationSwatches */ "./src/modules/Woocommerce/VariationSwatches/VariationSwatches.js");
+/* harmony import */ var _modules_ErrorModal_ErrorModal__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/ErrorModal/ErrorModal */ "./src/modules/ErrorModal/ErrorModal.js");
+/* harmony import */ var _modules_Header__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modules/Header */ "./src/modules/Header.js");
+/* harmony import */ var _modules_Scroll_FixedNavMobile__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./modules/Scroll/FixedNavMobile */ "./src/modules/Scroll/FixedNavMobile.js");
+/* harmony import */ var _modules_Modals_PhoneModal__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/Modals/PhoneModal */ "./src/modules/Modals/PhoneModal.js");
+/* harmony import */ var _modules_Woocommerce_AjaxOperation_AjaxAddToCart__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/Woocommerce/AjaxOperation/AjaxAddToCart */ "./src/modules/Woocommerce/AjaxOperation/AjaxAddToCart.js");
+/* harmony import */ var _modules_DesktopMenu__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/DesktopMenu */ "./src/modules/DesktopMenu.js");
+/* harmony import */ var _modules_MobileMenu__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/MobileMenu */ "./src/modules/MobileMenu.js");
+/* harmony import */ var _modules_FAQ__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/FAQ */ "./src/modules/FAQ.js");
+/* harmony import */ var _modules_QuoteFeature_QuoteAjax__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./modules/QuoteFeature/QuoteAjax */ "./src/modules/QuoteFeature/QuoteAjax.js");
+/* harmony import */ var _modules_RevealEffect_RevealEffect__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./modules/RevealEffect/RevealEffect */ "./src/modules/RevealEffect/RevealEffect.js");
+/* harmony import */ var _modules_FormProcessor_FormProcessor__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./modules/FormProcessor/FormProcessor */ "./src/modules/FormProcessor/FormProcessor.js");
+/* harmony import */ var _modules_Woocommerce_QtyHandler_QtyHandler__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./modules/Woocommerce/QtyHandler/QtyHandler */ "./src/modules/Woocommerce/QtyHandler/QtyHandler.js");
 
 
 
@@ -56,7 +55,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // search 
 
-
+// import MobileSearch from "./modules/MobileSearch";
 
 // facet filter
 
@@ -91,18 +90,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let $ = jQuery;
-const desktopMenu = new _modules_DesktopMenu__WEBPACK_IMPORTED_MODULE_20__["default"]('#main-menu .menu');
-const mobileMenu = new _modules_MobileMenu__WEBPACK_IMPORTED_MODULE_21__["default"]();
-const qtyHandler = new _modules_Woocommerce_QtyHandler_QtyHandler__WEBPACK_IMPORTED_MODULE_26__["default"]();
+const desktopMenu = new _modules_DesktopMenu__WEBPACK_IMPORTED_MODULE_19__["default"]('#main-menu .menu');
+const mobileMenu = new _modules_MobileMenu__WEBPACK_IMPORTED_MODULE_20__["default"]();
+const qtyHandler = new _modules_Woocommerce_QtyHandler_QtyHandler__WEBPACK_IMPORTED_MODULE_25__["default"]();
 // search 
 const search = new _modules_Search__WEBPACK_IMPORTED_MODULE_7__["default"]();
-const mobileSearch = new _modules_MobileSearch__WEBPACK_IMPORTED_MODULE_8__["default"]();
 
 // add to cart and remove from cart class 
 const popUpCart = new _modules_PopUpCart__WEBPACK_IMPORTED_MODULE_3__["default"]();
 
 // woo Gallery 
-const wooGallery = new _modules_Woocommerce_WooGallery__WEBPACK_IMPORTED_MODULE_11__["default"]();
+const wooGallery = new _modules_Woocommerce_WooGallery__WEBPACK_IMPORTED_MODULE_10__["default"]();
 // single product page accordion 
 // single product 
 // const singleProduct = new SingleProduct()
@@ -111,54 +109,54 @@ const wooGallery = new _modules_Woocommerce_WooGallery__WEBPACK_IMPORTED_MODULE_
 const everyOwlCarousel = new _modules_OwlCarousel_EveryOwlCarousel__WEBPACK_IMPORTED_MODULE_2__["default"]();
 
 // product archive
-const quickView = new _modules_Woocommerce_ProductArchive_QuickView__WEBPACK_IMPORTED_MODULE_12__["default"]();
+const quickView = new _modules_Woocommerce_ProductArchive_QuickView__WEBPACK_IMPORTED_MODULE_11__["default"]();
 // product options 
 // track product options
 // Initialize the ProductOptions class when document is ready
 jQuery(document).ready(function ($) {
   // variation swatches
-  const variationSwatches = new _modules_Woocommerce_VariationSwatches_VariationSwatches__WEBPACK_IMPORTED_MODULE_14__["default"]();
-  const ajaxAddToCart = new _modules_Woocommerce_AjaxOperation_AjaxAddToCart__WEBPACK_IMPORTED_MODULE_19__["default"]();
-  const faq = new _modules_FAQ__WEBPACK_IMPORTED_MODULE_22__["default"]('.faq-section');
+  const variationSwatches = new _modules_Woocommerce_VariationSwatches_VariationSwatches__WEBPACK_IMPORTED_MODULE_13__["default"]();
+  const ajaxAddToCart = new _modules_Woocommerce_AjaxOperation_AjaxAddToCart__WEBPACK_IMPORTED_MODULE_18__["default"]();
+  const faq = new _modules_FAQ__WEBPACK_IMPORTED_MODULE_21__["default"]('.faq-section');
 });
 
 // modals 
-const errorModal = new _modules_ErrorModal_ErrorModal__WEBPACK_IMPORTED_MODULE_15__["default"]();
+const errorModal = new _modules_ErrorModal_ErrorModal__WEBPACK_IMPORTED_MODULE_14__["default"]();
 
 // scroll events 
-const fixedNavMobile = new _modules_Scroll_FixedNavMobile__WEBPACK_IMPORTED_MODULE_17__["default"]();
+const fixedNavMobile = new _modules_Scroll_FixedNavMobile__WEBPACK_IMPORTED_MODULE_16__["default"]();
 // header 
-const header = new _modules_Header__WEBPACK_IMPORTED_MODULE_16__["default"]();
+const header = new _modules_Header__WEBPACK_IMPORTED_MODULE_15__["default"]();
 
 // mobile menu 
-const phoneModal = new _modules_Modals_PhoneModal__WEBPACK_IMPORTED_MODULE_18__["default"]();
+const phoneModal = new _modules_Modals_PhoneModal__WEBPACK_IMPORTED_MODULE_17__["default"]();
 window.onload = function () {
   // exit intent modal 
   // const exitIntentModal = new ExitIntentModal()
-  const revealEffect = new _modules_RevealEffect_RevealEffect__WEBPACK_IMPORTED_MODULE_24__["default"]();
+  const revealEffect = new _modules_RevealEffect_RevealEffect__WEBPACK_IMPORTED_MODULE_23__["default"]();
   const generalModal = new _modules_GeneralModal__WEBPACK_IMPORTED_MODULE_5__["default"]();
   // cart modal 
   const cartModal = new _modules_Modals_CartModal__WEBPACK_IMPORTED_MODULE_6__["default"]();
   // form data processing 
 
   // facet filter 
-  const facetFilter = new _modules_FacetFilter_FacetFilter__WEBPACK_IMPORTED_MODULE_9__["default"]();
-  const sortProduct = new _modules_FacetFilter_SortProduct__WEBPACK_IMPORTED_MODULE_10__["default"]();
+  const facetFilter = new _modules_FacetFilter_FacetFilter__WEBPACK_IMPORTED_MODULE_8__["default"]();
+  const sortProduct = new _modules_FacetFilter_SortProduct__WEBPACK_IMPORTED_MODULE_9__["default"]();
   // optimization 
   // const optimization = new Optimization()
 
   // quote ajax
-  const quoteAjax = new _modules_QuoteFeature_QuoteAjax__WEBPACK_IMPORTED_MODULE_23__["default"]();
+  const quoteAjax = new _modules_QuoteFeature_QuoteAjax__WEBPACK_IMPORTED_MODULE_22__["default"]();
   // enquiry modal 
   const productEnquiry = new _modules_Woocommerce_ProductEnquiry_ProductEnquiry__WEBPACK_IMPORTED_MODULE_4__["default"]();
 
   // form processor 
   // arg1 = form wrapper id arg2 = success message, arg3 = send cookie object, arg4 = form type
   const sendCookieObject = true;
-  const footerContactForm = new _modules_FormProcessor_FormProcessor__WEBPACK_IMPORTED_MODULE_25__["default"]("#footer-form-wrapper", "Form submitted successfully", false, "Footer Contact Form");
-  const contactPageForm = new _modules_FormProcessor_FormProcessor__WEBPACK_IMPORTED_MODULE_25__["default"]("#contact-form", "Form submitted successfully", false, "Contact Form");
-  const quoteForm = new _modules_FormProcessor_FormProcessor__WEBPACK_IMPORTED_MODULE_25__["default"]("#quote-form", "Form submitted successfully", sendCookieObject, "Quote Form");
-  const singleProductTabs = new _modules_Woocommerce_SingleProductTabs__WEBPACK_IMPORTED_MODULE_13__["default"]();
+  const footerContactForm = new _modules_FormProcessor_FormProcessor__WEBPACK_IMPORTED_MODULE_24__["default"]("#footer-form-wrapper", "Form submitted successfully", false, "Footer Contact Form");
+  const contactPageForm = new _modules_FormProcessor_FormProcessor__WEBPACK_IMPORTED_MODULE_24__["default"]("#contact-form", "Form submitted successfully", false, "Contact Form");
+  const quoteForm = new _modules_FormProcessor_FormProcessor__WEBPACK_IMPORTED_MODULE_24__["default"]("#quote-form", "Form submitted successfully", sendCookieObject, "Quote Form");
+  const singleProductTabs = new _modules_Woocommerce_SingleProductTabs__WEBPACK_IMPORTED_MODULE_12__["default"]();
 };
 
 // jQuery(document).ready(function ($) {
@@ -358,26 +356,53 @@ class FacetFilter {
     this.events();
   }
   events() {
-    //    set cookie to false every page load to hide the facet container 
+    // Set cookie to false every page load to hide the facet container 
     Cookies.set('showingProductFacetContainer', 'false');
 
-    // show filter container
-    this.filterButton.on('click', this.showFilterWrapper);
+    // Show filter container
+    this.filterButton.on('click', this.showFilterWrapper.bind(this));
 
-    // hide filter container
-    this.closeButton.on('click', this.hideFilterWrapper);
-    $('.dark-overlay').on('click', this.hideFilterWrapper);
+    // Hide filter container
+    this.closeButton.on('click', this.hideFilterWrapper.bind(this));
+    $('.dark-overlay').on('click', this.hideFilterWrapper.bind(this));
+
+    // Ensure events are bound for the initial load
+    this.bindFilterEvents();
+
+    // Rebind after FacetWP updates
+    $(document).on('facetwp-loaded', this.bindFilterEvents.bind(this));
   }
 
-  // show desktop filter container on button click
+  // Show desktop filter container on button click
   showFilterWrapper() {
-    const showContainer = Cookies.get('showingProductFacetContainer');
     $('.dark-overlay').toggle();
     $('.filter-wrapper').toggleClass('show');
+
+    // Add a small delay to ensure elements are interactive
+    setTimeout(() => {
+      // Rebind events for checkboxes
+      this.bindFilterEvents();
+
+      // Re-initialize FacetWP
+      FWP.refresh();
+    }, 100); // Adjust delay as needed
   }
   hideFilterWrapper() {
     $('.filter-wrapper').removeClass('show');
     $('.dark-overlay').hide();
+  }
+  bindFilterEvents() {
+    // Unbind previous events to avoid duplicate bindings
+    $(document).off('click', '.facetwp-checkbox input[type="checkbox"]');
+
+    // Bind click event for checkboxes
+    $(document).on('click', '.facetwp-checkbox input[type="checkbox"]', function (event) {
+      const checkbox = $(this);
+      console.log('Checkbox clicked:', checkbox.val());
+      console.log('Checkbox state:', checkbox.prop('checked'));
+      // Trigger FacetWP to refresh
+      FWP.refresh();
+    });
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FacetFilter);
@@ -723,131 +748,6 @@ class MobileMenu {
 
 /***/ }),
 
-/***/ "./src/modules/MobileSearch.js":
-/*!*************************************!*\
-  !*** ./src/modules/MobileSearch.js ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-let $ = jQuery;
-class MobileSearch {
-  // describe and create/initiate our object
-  constructor() {
-    this.url = `${webduelData.root_url}/wp-json/webduel/v1/search?term=`;
-    this.allProductsURL = `${webduelData.root_url}/wp-json/webduel/v1/all-products-search?term=`;
-    this.loading = $('.search-bar .loading-icon');
-    this.searchIcon = $('.search-code .mobile-search');
-    this.resultDiv = $('.search-code .result-div');
-    this.searchField = $('#mobile-search-term');
-    this.typingTimer;
-    this.searchBar = $('.search-bar');
-    this.events();
-    this.isSpinnerVisible = false;
-    this.previousValue;
-  }
-  // events 
-  events() {
-    this.searchField.on("keyup", this.typingLogic.bind(this));
-    this.searchField.on("click", this.searchFieldClickHandler.bind(this));
-    $(document).on("click", this.documentClickHandler.bind(this));
-    // redirect to result page when clicked on search icon  
-    this.searchIcon.on('click', this.takeToQueryPage);
-    this.searchField.on('keypress', this.takeToQueryPageOnEnter);
-  }
-  // document click handler
-  documentClickHandler(e) {
-    if (!this.searchBar.is(e.target) && this.searchBar.has(e.target).length === 0) {
-      this.resultDiv.hide();
-    }
-  }
-  // search field click
-  searchFieldClickHandler() {
-    this.resultDiv.show();
-  }
-  // methods
-  typingLogic() {
-    if (this.searchField.val() != this.previousValue) {
-      clearTimeout(this.typingTimer);
-      // check if the value is not empty
-      if (this.searchField.val()) {
-        if (!this.isSpinnerVisible) {
-          // show loading spinner
-          this.loading.show();
-          this.isSpinnerVisible = true;
-        }
-        this.typingTimer = setTimeout(this.getResults.bind(this), 2000);
-      } else {
-        // hide loading
-        this.loading.hide();
-        this.isSpinnerVisible = false;
-      }
-    }
-    this.previousValue = this.searchField.val();
-  }
-
-  // get result method
-  async getResults() {
-    // send request 
-    $.getJSON(`${this.url}${this.searchField.val()}`, data => {
-      this.resultDiv.show();
-      if (data.length) {
-        this.resultDiv.html(`<ul class="search-list">
-                ${data.map(item => {
-          return `<li>
-                    <a href="${item.link}"> 
-                    <img src="${item.image}" alt=${item.title}/>
-                    <span>${item.title}</span>
-                    </a>
-                    </li>`;
-        }).join('')}
-                </ul>`);
-
-        // get rest of the query projects
-        $.getJSON(`${this.allProductsURL}${this.searchField.val()}`, allProducts => {
-          if (allProducts.length) {
-            $('.search-list').append(` ${allProducts.map(item => {
-              return `<li>
-                            <a href="${item.link}"> 
-                            <img src="${item.image}" alt=${item.title}/>
-                            <span>${item.title}</span>
-                            </a>
-                            </li>`;
-            }).join('')}`);
-          }
-        });
-      } else {
-        this.resultDiv.html(`<p class="center-align medium">Nothing found</p>`);
-      }
-
-      // hide loading spinner 
-      if (this.isSpinnerVisible) {
-        this.loading.hide();
-        this.isSpinnerVisible = false;
-      }
-    });
-  }
-
-  // query page redirect 
-  takeToQueryPage() {
-    if ($('#mobile-search-term').val().length >= 1) {
-      window.location.href = `${webduelData.root_url}/shop/?_search=${$('#mobile-search-term').val()}`;
-    }
-  }
-  takeToQueryPageOnEnter(e) {
-    var key = e.which || e.keyCode || 0;
-    if ($('#mobile-search-term').val().length >= 1 && key == 13) {
-      window.location.href = `${webduelData.root_url}/shop/?_search=${$('#mobile-search-term').val()}`;
-    }
-  }
-}
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MobileSearch);
-
-/***/ }),
-
 /***/ "./src/modules/Modals/CartModal.js":
 /*!*****************************************!*\
   !*** ./src/modules/Modals/CartModal.js ***!
@@ -970,19 +870,23 @@ class EveryOwlCarousel {
       slidesToScroll: 4,
       dots: true,
       centerMode: true,
+      focusOnSelect: true,
       centerPadding: "40px",
       autoplay: false,
       adaptiveHeight: false,
       autoplaySpeed: 2000,
+      arrows: false,
       responsive: [{
         breakpoint: 1450,
         settings: {
-          slidesToShow: 3
+          slidesToShow: 3,
+          arrows: false
         }
       }, {
         breakpoint: 1000,
         settings: {
-          slidesToShow: 2
+          slidesToShow: 2,
+          arrows: false
         }
       }, {
         breakpoint: 600,
@@ -1030,31 +934,29 @@ class EveryOwlCarousel {
   // woo gallery carousel 
   wooGallery() {
     $('.custom-slick-slider').slick({
-      slidesToShow: 8,
+      slidesToShow: 10,
       dots: false,
-      nextArrow: this.nextArrow,
-      prevArrow: this.prevArrow,
-      arrows: true,
+      arrows: false,
+      focusOnSelect: true,
       responsive: [{
         breakpoint: 1100,
         settings: {
-          slidesToShow: 6,
-          dots: true,
-          arrows: false
+          slidesToShow: 10,
+          centerMode: true
         }
       }, {
         breakpoint: 720,
         settings: {
-          slidesToShow: 4,
-          dots: true,
-          arrows: false
+          slidesToShow: 6,
+          centerMode: true,
+          centerPadding: '40px'
         }
       }, {
-        breakpoint: 350,
+        breakpoint: 450,
         settings: {
-          slidesToShow: 3,
-          dots: true,
-          arrows: false
+          slidesToShow: 4,
+          centerMode: true,
+          centerPadding: '40px'
         }
       }]
     });
@@ -1411,7 +1313,6 @@ class Search {
   // describe and create/initiate our object
   constructor() {
     this.url = `${webduelData.root_url}/wp-json/webduel/v1/search?term=`;
-    this.allProductsURL = `${webduelData.root_url}/wp-json/webduel/v1/all-products-search?term=`;
     this.loading = $('.search-bar .loading-icon');
     this.searchIcon = $('.search-code .desktop-search');
     this.resultDiv = $('.search-code .result-div');
@@ -1422,15 +1323,16 @@ class Search {
     this.isSpinnerVisible = false;
     this.previousValue;
   }
+
   // events 
   events() {
-    this.searchField.on("keyup", this.typingLogic.bind(this));
+    this.searchField.on("input", this.typingLogic.bind(this)); // Use input event to handle typing and pasting
     this.searchField.on("click", this.searchFieldClickHandler.bind(this));
     // add on enter event 
     this.searchField.on("keypress", this.sendToShopPage.bind(this));
     $(document).on("click", this.documentClickHandler.bind(this));
     // redirect to result page when clicked on search icon  
-    this.searchIcon.on('click', this.takeToQueryPage);
+    this.searchIcon.on('click', this.takeToQueryPage.bind(this));
   }
 
   // document click handler
@@ -1439,10 +1341,12 @@ class Search {
       this.resultDiv.hide();
     }
   }
+
   // search field click
   searchFieldClickHandler() {
     this.resultDiv.show();
   }
+
   // methods
   typingLogic() {
     if (this.searchField.val() != this.previousValue) {
@@ -1454,11 +1358,12 @@ class Search {
           this.loading.show();
           this.isSpinnerVisible = true;
         }
-        this.typingTimer = setTimeout(this.getResults.bind(this), 2000);
+        this.typingTimer = setTimeout(this.getResults.bind(this), 500); // Adjusted to 500ms for quicker response
       } else {
         // hide loading
         this.loading.hide();
         this.isSpinnerVisible = false;
+        this.resultDiv.hide();
       }
     }
     this.previousValue = this.searchField.val();
@@ -1471,39 +1376,31 @@ class Search {
       method: 'GET',
       redirect: 'follow'
     };
-    fetch(queryURL, requestOptions).then(response => response.text()).then(result => console.log(result)).catch(error => console.log('error', error));
-    // send request 
-    $.getJSON(queryURL, data => {
+    fetch(queryURL, requestOptions).then(response => response.json()).then(data => {
       this.resultDiv.show();
       if (data.length) {
         this.resultDiv.html(`<ul class="search-list">
-                ${data.map(item => {
+                    ${data.map(item => {
           return `<li>
-                    <a href="${item.link}"> 
-                    <img src="${item.image}" alt=${item.title}/>
-                    <span>${item.title}</span>
-                    </a>
-                    </li>`;
+                        <a href="${item.link}"> 
+                        <img src="${item.image}" alt="${item.title}"/>
+                        <span>${item.title}</span>
+                        </a>
+                        </li>`;
         }).join('')}
-                </ul>`);
-
-        // get rest of the query projects
-        $.getJSON(`${this.allProductsURL}${this.searchField.val()}`, allProducts => {
-          if (allProducts.length) {
-            $('.search-list').append(` ${allProducts.map(item => {
-              return `<li>
-                            <a href="${item.link}"> 
-                            <img src="${item.image}" alt=${item.title}/>
-                            <span>${item.title}</span>
-                            </a>
-                            </li>`;
-            }).join('')}`);
-          }
-        });
+                    </ul>`);
       } else {
         this.resultDiv.html(`<p class="center-align medium">Nothing found</p>`);
       }
       // hide loading spinner 
+      if (this.isSpinnerVisible) {
+        this.loading.hide();
+        this.isSpinnerVisible = false;
+      }
+    }).catch(error => {
+      console.log('error', error);
+      this.resultDiv.html(`<p class="center-align medium">An error occurred. Please try again.</p>`);
+      // hide loading spinner on error
       if (this.isSpinnerVisible) {
         this.loading.hide();
         this.isSpinnerVisible = false;
@@ -1513,8 +1410,8 @@ class Search {
 
   // query page redirect 
   takeToQueryPage(e) {
-    if ($('#search-term').val().length >= 1) {
-      window.location.href = `${webduelData.root_url}/shop/?_search=${$('#search-term').val()}`;
+    if (this.searchField.val().length >= 1) {
+      window.location.href = `${webduelData.root_url}/shop/?_search=${this.searchField.val()}`;
     }
   }
   sendToShopPage(event) {
@@ -1523,7 +1420,6 @@ class Search {
       event.preventDefault(); // Prevent the form submission
 
       var searchTerm = $(event.target).val();
-      // var url = "https://example.com/search-page"; // Your target URL
       const url = `${location.protocol}//${location.host}/shop?_search=${encodeURIComponent(searchTerm)}`;
       // Redirect to the URL with the search term included as a query parameter
       window.location.href = url;
@@ -1613,6 +1509,8 @@ class AjaxAddToCart {
       url: webduelData.ajaxurl,
       data: data,
       success: function (response) {
+        console.log(response);
+
         // if I get an error from the server
         // update the fragments 
         if (response.fragments) {
@@ -1628,7 +1526,7 @@ class AjaxAddToCart {
 
           $(document.body).trigger('wc_fragment_refresh'); // Optionally, refresh fragments
         } else {
-          $button.siblings('.error-message').show().html(`something went wrong. Please try again`); // Show and update the success message
+          $button.siblings('.error-message').show().html(response.data); // Show and update the success message
           $button.html('Added to cart'); // Update button text on success
         }
 
@@ -2106,8 +2004,8 @@ class WooGallery {
 
       if (this.$largeImage.length && window.matchMedia('(min-width: 1250px)').matches) {
         this.zoomer = this.$largeImageContainer.find('img');
-        this.initializeEvents();
       }
+      this.initializeEvents();
     }
   }
   initializeEvents() {
@@ -2122,6 +2020,7 @@ class WooGallery {
   bindGalleryImageClicks() {
     const $galleryImages = $('.single .gallery li img');
     $galleryImages.on('click', event => {
+      console.log('clicked');
       const largeImageSrc = $(event.currentTarget).data('large_image');
       console.log(largeImageSrc);
       this.replaceImage(largeImageSrc);

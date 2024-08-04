@@ -102,7 +102,7 @@
                                         stroke-width="1" />
                                 </g>
                             </svg>
-                            <input autocomplete="off" type="text" class="search-input" placeholder="Search..."
+                            <input autocomplete="off" type="text" class="search-input" placeholder="Search..." autofocus
                                 id="search-term" />
                             <?php 
                          do_action('webduel_loading_icon'); 

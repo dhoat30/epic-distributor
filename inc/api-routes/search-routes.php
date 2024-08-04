@@ -1,115 +1,119 @@
-<?php
-//routes
-
+<?php 
 add_action("rest_api_init", "search_route");
 
 function search_route() {
-    // search products
+    // Search products
     register_rest_route("webduel/v1", "search", array(
         "methods" => "GET",
-        "callback" => "searchProducts",
-        'permission_callback' => '__return_true', // Allow public access
-
-    ));
-
-     // search all products
-     register_rest_route("webduel/v1", "all-products-search", array(
-        "methods" => "GET",
-        "callback" => "allProductsSearch",
+        "callback" => "search_products",
         'permission_callback' => '__return_true', // Allow public access
     ));
-	
 }
 
-// all products search
-function allProductsSearch($data){
-    $term = sanitize_text_field($data["term"]);
-    $argsSearch = array(
+// Helper function to perform a basic product search
+function basic_product_search($term, $posts_per_page) {
+    $args = array(
         'post_type' => 'product',
-        'posts_per_page'=> 100, 
-        "s"=> $term
+        'posts_per_page' => $posts_per_page,
+        's' => $term,
     );
-    $incVar = 1; 
-    $search = new WP_Query( $argsSearch );
-    $secondResult =  array(); 
-    while($search->have_posts()){ 
-        $search->the_post(); 
-        $incVar++; 
-        if($incVar > 10){ 
-            array_push($secondResult, array(
-                "title"=> get_the_title(),
-                  "image"=> get_the_post_thumbnail_url(get_the_id(), 'woocommerce_gallery_thumbnail'), 
-                "link"=> get_the_permalink()
-            ));
-        }
-      
-    }
-  
-   
-        $argsSearch = array(
-            'post_type' => 'product',
-            'posts_per_page'=> 100,
-            "s"=> substr_replace($term, "", -1)
+
+    $search = new WP_Query($args);
+    $results = array();
+
+    while ($search->have_posts()) {
+        $search->the_post();
+        $results[get_the_ID()] = array(
+            "title" => get_the_title(),
+            "image" => get_the_post_thumbnail_url(get_the_ID(), 'woocommerce_gallery_thumbnail'),
+            "link" => get_the_permalink()
         );
-        $search = new WP_Query( $argsSearch );
-      
-        $incrementVar = 1; 
-        while($search->have_posts()){ 
-            $search->the_post(); 
+    }
 
-            $incrementVar++; 
-            if($incrementVar > 10){ 
-            array_push($secondResult, array(
-                "title"=> get_the_title(),
-                "link"=> get_the_permalink(),
-				  "image"=> get_the_post_thumbnail_url(get_the_id(), 'woocommerce_gallery_thumbnail'), 
+    wp_reset_postdata();
 
-            ));
-        }
-        }
-        return $secondResult;
-    
-    
+    return $results;
 }
 
-function searchProducts($data){
-    $term = sanitize_text_field($data["term"]);
-    $argsSearch = array(
+// Helper function to perform a meta and taxonomy search
+function advanced_product_search($term, $posts_per_page) {
+    $args = array(
         'post_type' => 'product',
-        'posts_per_page'=> 10,
-        "s"=> $term
+        'posts_per_page' => $posts_per_page,
+        'meta_query' => array(
+            'relation' => 'OR',
+            array(
+                'key' => '_sku',
+                'value' => $term,
+                'compare' => 'LIKE'
+            ),
+            array(
+                'key' => '_price',
+                'value' => $term,
+                'compare' => 'LIKE'
+            )
+        ),
+        'tax_query' => array(
+            'relation' => 'OR',
+            array(
+                'taxonomy' => 'product_cat',
+                'field' => 'name',
+                'terms' => $term,
+                'operator' => 'LIKE'
+            ),
+            array(
+                'taxonomy' => 'product_tag',
+                'field' => 'name',
+                'terms' => $term,
+                'operator' => 'LIKE'
+            )
+        )
     );
-    $search = new WP_Query( $argsSearch );
-    $productResult =  array(); 
-    while($search->have_posts()){ 
-        $search->the_post(); 
 
-        array_push($productResult, array(
-            "title"=> get_the_title(),
-            "image"=> get_the_post_thumbnail_url(get_the_id(), 'woocommerce_gallery_thumbnail'), 
-            "link"=> get_the_permalink()
-        ));
-    }
-    
-        $argsSearch = array(
-            'post_type' => 'product',
-            'posts_per_page'=> 10,
-            "s"=> substr_replace($term, "", -1)
+    $search = new WP_Query($args);
+    $results = array();
+
+    while ($search->have_posts()) {
+        $search->the_post();
+        $results[get_the_ID()] = array(
+            "title" => get_the_title(),
+            "image" => get_the_post_thumbnail_url(get_the_ID(), 'woocommerce_gallery_thumbnail'),
+            "link" => get_the_permalink()
         );
-        $search = new WP_Query( $argsSearch );
-        $productResult =  array(); 
-        while($search->have_posts()){ 
-            $search->the_post(); 
-    
-            array_push($productResult, array(
-                "title"=> get_the_title(),
-                "image"=> get_the_post_thumbnail_url(get_the_id(), 'woocommerce_gallery_thumbnail'), 
-                "link"=> get_the_permalink()
-            ));
-        }
-        return $productResult;
+    }
+
+    wp_reset_postdata();
+
+    return $results;
 }
 
+// Combined product search
+function perform_product_search($term, $posts_per_page = 10) {
+    $basic_results = basic_product_search($term, $posts_per_page);
+    $advanced_results = advanced_product_search($term, $posts_per_page);
 
+    // Merge results
+    $results = array_merge($basic_results, $advanced_results);
 
-?>
+    // Remove duplicates by using unique product IDs
+    $results = array_values($results);
+
+    // Limit the results to the desired number
+    if (count($results) > $posts_per_page) {
+        $results = array_slice($results, 0, $posts_per_page);
+    }
+
+    return $results;
+}
+
+// Search products
+function search_products($data) {
+    $term = sanitize_text_field($data["term"]);
+    if (empty($term)) {
+        return new WP_Error('no_term', 'Search term is required', array('status' => 400));
+    }
+
+    $results = perform_product_search($term, 100);
+
+    return $results;
+}

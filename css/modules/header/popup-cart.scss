@@ -102,6 +102,9 @@
       a {
         display: block;
         width: 100%;
+        span {
+          color: var(--light-on-primary) !important;
+        }
       }
     }
   }

@@ -51,23 +51,25 @@ class EveryOwlCarousel {
             slidesToScroll: 4,
             dots: true,
             centerMode: true,
+            focusOnSelect: true,
             centerPadding: "40px",
             autoplay: false,
             adaptiveHeight: false,
             autoplaySpeed: 2000,
-
+            arrows: false,
             responsive: [
                 {
                     breakpoint: 1450,
                     settings: {
                         slidesToShow: 3,
+                        arrows: false,
                     }
                 },
-
                 {
                     breakpoint: 1000,
                     settings: {
                         slidesToShow: 2,
+                        arrows: false,
 
                     }
                 },
@@ -75,9 +77,7 @@ class EveryOwlCarousel {
                     breakpoint: 600,
                     settings: {
                         slidesToShow: 1,
-                        arrows: false
-
-
+                        arrows: false,
                     }
                 },
             ]
@@ -128,37 +128,34 @@ class EveryOwlCarousel {
     // woo gallery carousel 
     wooGallery() {
         $('.custom-slick-slider').slick({
-            slidesToShow: 8,
+            slidesToShow: 10,
             dots: false,
-            nextArrow: this.nextArrow,
-            prevArrow: this.prevArrow,
-            arrows: true,
+            arrows: false,
+            focusOnSelect: true,
             responsive: [
                 {
                     breakpoint: 1100,
                     settings: {
-                        slidesToShow: 6,
-                        dots: true,
+                        slidesToShow: 10,
+                        centerMode: true,
 
-                        arrows: false,
                     }
                 },
                 {
                     breakpoint: 720,
                     settings: {
-                        slidesToShow: 4,
-                        dots: true,
-
-                        arrows: false,
+                        slidesToShow: 6,
+                        centerMode: true,
+                        centerPadding: '40px',
                     }
                 },
                 {
-                    breakpoint: 350,
+                    breakpoint: 450,
                     settings: {
-                        slidesToShow: 3,
-                        dots: true,
+                        slidesToShow: 4,
+                        centerMode: true,
+                        centerPadding: '40px',
 
-                        arrows: false,
                     }
                 },
             ]

@@ -48,7 +48,7 @@ switch ($button_color) {
        $wideCardSalePrice = $wideCardData['content_group']['price']['sale_price'];
        $wideCardButtonColorArr = webduel_set_button_color_four_cards_row($wideCardButtonColor);
     }
-   
+
 
     // small card first
     $smallCardFirstData = get_sub_field('small_card');
@@ -116,9 +116,9 @@ switch ($button_color) {
                                 srcset="<?php echo $wideCardDesktopImage['sizes']['2048x2048']; ?>">
                             <source media="(min-width:900px)"
                                 srcset="<?php echo $wideCardDesktopImage['sizes']['large']; ?>">
-                            <source media="(min-width:400px)"
+                            <source media="(min-width:500px)"
                                 srcset="<?php echo $wideCardMobileImage['sizes']['large']; ?>">
-                            <img src="<?php echo $wideCardMobileImage['sizes']['woocommerce_thumbnail']; ?>"
+                            <img src="<?php echo $wideCardMobileImage['sizes']['medium']; ?>"
                                 alt="<?php echo $wideCardMobileImage['alt']; ?>" width="100%" height="400px"
                                 class="img-fill">
                         </picture>
@@ -169,9 +169,9 @@ switch ($button_color) {
                                     srcset="<?php echo $smallCardFirstDesktopImage['sizes']['2048x2048']; ?>">
                                 <source media="(min-width:900px)"
                                     srcset="<?php echo $smallCardFirstDesktopImage['sizes']['large']; ?>">
-                                <source media="(min-width:400px)"
+                                <source media="(min-width:500px)"
                                     srcset="<?php echo $smallCardFirstDesktopImage['sizes']['large']; ?>">
-                                <img src="<?php echo $smallCardFirstDesktopImage['sizes']['woocommerce_thumbnail']; ?>"
+                                <img src="<?php echo $smallCardFirstDesktopImage['sizes']['medium']; ?>"
                                     alt="<?php echo $smallCardFirstDesktopImage['alt']; ?>" width="100%" height="400px"
                                     class="img-fill">
                             </picture>
@@ -236,9 +236,9 @@ switch ($button_color) {
                                     srcset="<?php echo $smallCardSecondDesktopImage['sizes']['2048x2048']; ?>">
                                 <source media="(min-width:900px)"
                                     srcset="<?php echo $smallCardSecondDesktopImage['sizes']['large']; ?>">
-                                <source media="(min-width:400px)"
+                                <source media="(min-width:500px)"
                                     srcset="<?php echo $smallCardSecondDesktopImage['sizes']['large']; ?>">
-                                <img src="<?php echo $smallCardSecondDesktopImage['sizes']['woocommerce_thumbnail']; ?>"
+                                <img src="<?php echo $smallCardSecondDesktopImage['sizes']['medium']; ?>"
                                     alt="<?php echo $smallCardSecondDesktopImage['alt']; ?>" width="100%" height="400px"
                                     class="img-fill">
                             </picture>
@@ -316,9 +316,9 @@ switch ($button_color) {
                                 srcset="<?php echo $verticalCardDesktopImage['sizes']['2048x2048']; ?>">
                             <source media="(min-width:900px)"
                                 srcset="<?php echo $verticalCardDesktopImage['sizes']['large']; ?>">
-                            <source media="(min-width:400px)"
+                            <source media="(min-width:500px)"
                                 srcset="<?php echo $verticalCardDesktopImage['sizes']['large']; ?>">
-                            <img src="<?php echo $verticalCardDesktopImage['sizes']['large']; ?>"
+                            <img src="<?php echo $verticalCardDesktopImage['sizes']['medium']; ?>"
                                 alt="<?php echo $verticalCardDesktopImage['alt']; ?>" width="100%" height="400px"
                                 class="img-fill">
                         </picture>

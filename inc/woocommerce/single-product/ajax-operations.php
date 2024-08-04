@@ -28,7 +28,14 @@ function webduel_ajax_add_to_cart() {
     $added = WC()->cart->add_to_cart($product_id, $quantity, $variation_id, $variations);
 
     if (!$added) {
-        wp_send_json_error("Failed to add product to the cart.");
+        // Capture error messages
+        $notices = wc_get_notices('error');
+        $error_message = !empty($notices) ? implode(' ', wp_list_pluck($notices, 'notice')) : 'Failed to add product to the cart.';
+        
+        // Clear notices to prevent duplicate messages
+        wc_clear_notices();
+
+        wp_send_json_error($error_message);
     } else {
         WC()->session->set('refresh_totals', true); // Ensure totals are recalculated
         WC_AJAX::get_refreshed_fragments();

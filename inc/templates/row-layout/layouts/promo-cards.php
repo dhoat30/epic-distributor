@@ -31,9 +31,9 @@ foreach ($promoCardsArr as $card) {
                     <picture>
                         <source media="(min-width:1366px)" srcset="<?php echo $image['sizes']['2048x2048']; ?>">
                         <source media="(min-width:900px)" srcset="<?php echo $image['sizes']['large']; ?>">
-                        <source media="(min-width:400px)" srcset="<?php echo $image['sizes']['large']; ?>">
-                        <img src="<?php echo $image['sizes']['woocommerce_thumbnail']; ?>"
-                            alt="<?php echo $image['alt']; ?>" width="100%" height="400px" class="img-fill">
+                        <source media="(min-width:500px)" srcset="<?php echo $image['sizes']['large']; ?>">
+                        <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>"
+                            width="100%" height="400px" class="img-fill" loading="lazy">
                     </picture>
                 </a>
                 <?php 

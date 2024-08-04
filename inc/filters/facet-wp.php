@@ -52,3 +52,57 @@ add_action( 'facetwp_scripts', function() {
 </script>
 <?php
   }, 100 );
+
+//   search code 
+add_action('pre_get_posts', 'limit_search_to_products');
+function limit_search_to_products($query) {
+    if ($query->is_search() && !is_admin()) {
+        $query->set('post_type', 'product');
+    }
+}
+
+// Modify the Search Query to Include Product Description, title and sky
+add_filter('posts_search', 'custom_search_by_sku', 10, 2);
+function custom_search_by_sku($search, $query) {
+    if ($query->is_search() && !is_admin() && isset($query->query_vars['s']) && $query->get('post_type') === 'product') {
+        global $wpdb;
+
+        $search = '';
+        $search_term = $query->query_vars['s'];
+
+        // Check for product title
+        $search .= "({$wpdb->posts}.post_title LIKE '%" . esc_sql($wpdb->esc_like($search_term)) . "%')";
+
+        // Check for product description
+        $search .= " OR ({$wpdb->posts}.post_content LIKE '%" . esc_sql($wpdb->esc_like($search_term)) . "%')";
+
+        // Check for SKU
+        $search .= " OR EXISTS (
+            SELECT * FROM $wpdb->postmeta
+            WHERE $wpdb->posts.ID = $wpdb->postmeta.post_id
+            AND $wpdb->postmeta.meta_key = '_sku'
+            AND $wpdb->postmeta.meta_value LIKE '%" . esc_sql($wpdb->esc_like($search_term)) . "%'
+        )";
+
+        $search = " AND ({$search})";
+
+        return $search;
+    }
+
+    return $search;
+}
+
+function my_facetwp_indexer_post($post_id, $post) {
+    if ('product' === $post->post_type) {
+        $sku = get_post_meta($post_id, '_sku', true);
+        if (!empty($sku)) {
+            FWP()->indexer->index_row(array(
+                'post_id' => $post_id,
+                'facet_name' => 'sku',
+                'facet_value' => $sku,
+                'facet_display_value' => $sku,
+            ));
+        }
+    }
+}
+add_action('facetwp_indexer_post', 'my_facetwp_indexer_post', 10, 2);

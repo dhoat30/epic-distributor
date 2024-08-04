@@ -20,7 +20,7 @@ import CartModal from './modules/Modals/CartModal'
 
 // search 
 import Search from './modules/Search'
-import MobileSearch from "./modules/MobileSearch";
+// import MobileSearch from "./modules/MobileSearch";
 
 // facet filter
 import FacetFilter from './modules/FacetFilter/FacetFilter'
@@ -62,7 +62,7 @@ const mobileMenu = new MobileMenu()
 const qtyHandler = new QtyHandler()
 // search 
 const search = new Search()
-const mobileSearch = new MobileSearch()
+
 
 // add to cart and remove from cart class 
 const popUpCart = new PopUpCart();

@@ -98,6 +98,9 @@
   display: block;
   width: 100%;
 }
+.cart-popup-container .cart-box .cta-wrapper a span {
+  color: var(--light-on-primary) !important;
+}
 .cart-popup-container .remove-column {
   cursor: pointer;
 }
@@ -910,14 +913,22 @@
 }
 .single-product .product .product-images .custom-slick-slider {
   width: 100%;
-  height: 110px;
+  height: 85px;
 }
 .single-product .product .product-images .custom-slick-slider .slick-track {
   margin-left: 0;
 }
+@media (max-width: 450px) {
+  .single-product .product .product-images .custom-slick-slider {
+    height: 70px;
+  }
+}
 .single-product .product .product-images .custom-slick-slider li {
   margin: 0 8px 0 0;
   cursor: pointer;
+}
+.single-product .product .product-images .custom-slick-slider li img {
+  border: 1px solid rgb(238, 241, 245);
 }
 
 .onsale {
@@ -1226,7 +1237,7 @@
 }
 @media (max-width: 600px) {
   .back-share-btn-wrapper {
-    padding: 8px 0 8px 0;
+    padding: 8px 0 16px 0;
   }
 }
 .back-share-btn-wrapper .back-wrapper a span {
@@ -1585,6 +1596,46 @@
          column-count: 1;
   }
 }
+.single .description-wrapper table ul,
+.single .warranty-wrapper table ul,
+.single .delivery-wrapper table ul {
+  margin-left: 0;
+  margin-top: 8px;
+  -moz-column-count: unset !important;
+       column-count: unset !important;
+  -moz-column-gap: unset !important;
+       column-gap: unset !important;
+  margin-bottom: 8px;
+}
+@media (max-width: 700px) {
+  .single .description-wrapper table ul,
+  .single .warranty-wrapper table ul,
+  .single .delivery-wrapper table ul {
+    -moz-column-count: unset !important;
+         column-count: unset !important;
+    margin-left: 0;
+  }
+}
+.single .description-wrapper table ol,
+.single .warranty-wrapper table ol,
+.single .delivery-wrapper table ol {
+  margin-left: 0;
+  margin-top: 8px;
+  -moz-column-count: unset !important;
+       column-count: unset !important;
+  -moz-column-gap: unset !important;
+       column-gap: unset !important;
+  margin-bottom: 8px;
+}
+@media (max-width: 700px) {
+  .single .description-wrapper table ol,
+  .single .warranty-wrapper table ol,
+  .single .delivery-wrapper table ol {
+    -moz-column-count: unset !important;
+         column-count: unset !important;
+    margin-left: 0;
+  }
+}
 .single .delivery-wrapper ul {
   list-style: none !important;
   margin: 0 !important;
@@ -1708,6 +1759,8 @@
 .single .product-accordion .tab-links .tab-content {
   display: none;
   background-color: var(--light-surface-container-low);
+  width: 100%;
+  overflow: auto;
 }
 .single .product-tabs .tab-links .tab-content.active,
 .single .product-accordion .tab-links .tab-content.active {
@@ -2225,7 +2278,7 @@
   overflow: hidden;
 }
 .product-list-container .title-wrapper {
-  background: rgba(0, 145, 177, 0.8039215686);
+  background: rgba(0, 77, 95, 0.8039215686);
   display: grid;
   align-items: center;
   grid-template-columns: 1fr auto;
@@ -2253,12 +2306,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #0091b1;
+    background: #005163;
   }
   .product-list-container .title-wrapper .title-subtile-wrapper .title::after {
     content: "";
     position: absolute;
-    background: #0091b1;
+    background: #005163;
     top: 50%;
     right: 0;
     transform: rotate(15deg) skewY(60deg);
@@ -3842,6 +3895,11 @@ ul.products li.product h2 {
   margin: 0 0 16px 0 !important;
 }
 
+.woocommerce-no-products-found {
+  display: block;
+  width: 100%;
+}
+
 .single-product .trending-section {
   height: 570px;
   max-height: 570px;
@@ -4936,7 +4994,7 @@ ul {
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 100 !important;
+  z-index: 1000 !important;
   background: rgba(0, 0, 0, 0.4);
   display: none;
 }
@@ -4947,7 +5005,7 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 10;
+  z-index: 100;
   background-color: rgba(255, 255, 255, 0.4);
   display: none;
 }
@@ -5267,6 +5325,9 @@ button[disabled] {
 }
 .error-message svg path {
   fill: var(--error);
+}
+.error-message a {
+  display: block !important;
 }
 
 .slick-slider .slick-arrow {

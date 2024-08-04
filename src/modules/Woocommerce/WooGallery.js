@@ -10,8 +10,8 @@ class WooGallery {
 
             if (this.$largeImage.length && window.matchMedia('(min-width: 1250px)').matches) {
                 this.zoomer = this.$largeImageContainer.find('img');
-                this.initializeEvents();
             }
+            this.initializeEvents();
         }
     }
 
@@ -29,7 +29,7 @@ class WooGallery {
         const $galleryImages = $('.single .gallery li img');
         $galleryImages.on('click', (event) => {
 
-
+            console.log('clicked');
             const largeImageSrc = $(event.currentTarget).data('large_image');
             console.log(largeImageSrc);
             this.replaceImage(largeImageSrc);

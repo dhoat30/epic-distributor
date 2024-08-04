@@ -75,7 +75,7 @@ class AjaxAddToCart {
             url: webduelData.ajaxurl,
             data: data,
             success: function (response) {
-
+                console.log(response);
 
                 // if I get an error from the server
                 // update the fragments 
@@ -94,7 +94,7 @@ class AjaxAddToCart {
 
                 }
                 else {
-                    $button.siblings('.error-message').show().html(`something went wrong. Please try again`);// Show and update the success message
+                    $button.siblings('.error-message').show().html(response.data);// Show and update the success message
                     $button.html('Added to cart') // Update button text on success
 
 
