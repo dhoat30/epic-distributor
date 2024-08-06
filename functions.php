@@ -138,14 +138,14 @@ function remove_downloads_from_account_menu($items) {
 }
 
 // Change the sender email
-add_filter('wp_mail_from', function ($email) {
-    return 'admin@epicdistributors.co.nz'; // Replace with your desired email address
-});
+// add_filter('wp_mail_from', function ($email) {
+//     return 'admin@epicdistributors.co.nz'; // Replace with your desired email address
+// });
 
-// Change the sender name
-add_filter('wp_mail_from_name', function ($name) {
-    return 'Epic Distributors '; // Replace with your desired sender name
-});
+// // Change the sender name
+// add_filter('wp_mail_from_name', function ($name) {
+//     return 'Epic Distributors '; // Replace with your desired sender name
+// });
 
 // add page slug to body class
 function add_slug_body_class($classes) {
@@ -196,6 +196,8 @@ function generate_toc($content) {
 
 function webduel_toc_shortcode($atts) {
     global $post;
+      // Check if we are on a single blog post page of the 'blogs' CPT
+      if (is_singular('blogs')) {
     $content = $post->post_content;
 
     $toc = generate_toc($content);
@@ -216,6 +218,8 @@ function webduel_toc_shortcode($atts) {
     $toc_html .= '</ul></div>';
 
     return $toc_html;
+} 
+return '';
 }
 
 add_shortcode('webduel_toc', 'webduel_toc_shortcode');

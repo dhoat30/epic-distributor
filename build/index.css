@@ -155,7 +155,7 @@
 }
 .useful-links-container .help-wrapper .contact-modal {
   padding: 8px 16px;
-  min-width: 200px;
+  min-width: 300px;
   z-index: 15000;
   position: absolute;
   box-shadow: var(--boxShadow);
@@ -4594,7 +4594,7 @@ ul.products li.product h2 {
   --dark-on-secondary-container: rgb(0 0 0);
   --dark-tertiary: rgb(240 255 235);
   --dark-on-tertiary: rgb(0 0 0);
-  --dark-tertiary-: rgb(117 225 129);
+  --dark-tertiary-container: rgb(117 225 129);
   --dark-on-tertiary-container: rgb(0 0 0);
   --dark-error: rgb(255 249 249);
   --dark-on-error: rgb(0 0 0);

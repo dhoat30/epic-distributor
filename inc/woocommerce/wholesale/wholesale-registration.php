@@ -1,21 +1,21 @@
 <?php 
 
-function redirect_from_wholesale_page() {
-    // Check if we are on the specific page by slug
-    if (is_page('wholesale-account')) {
-        // Check if the user is logged in
-        if (is_user_logged_in()) {
-            // Optionally, check if the user has a specific role, e.g., 'wholesale_customer'
+// function redirect_from_wholesale_page() {
+//     // Check if we are on the specific page by slug
+//     if (is_page('wholesale-account')) {
+//         // Check if the user is logged in
+//         if (is_user_logged_in()) {
+//             // Optionally, check if the user has a specific role, e.g., 'wholesale_customer'
       
-                // Redirect non-wholesalers to the homepage or another appropriate page
-                $redirectURL = home_url().'/my-account/upgrade-account/'; 
-                wp_redirect($redirectURL);
-                exit; // Don't forget to call exit
+//                 // Redirect non-wholesalers to the homepage or another appropriate page
+//                 $redirectURL = home_url().'/my-account/upgrade-account/'; 
+//                 wp_redirect($redirectURL);
+//                 exit; // Don't forget to call exit
          
-        } 
-    }
-}
-add_action('template_redirect', 'redirect_from_wholesale_page');
+//         } 
+//     }
+// }
+// add_action('template_redirect', 'redirect_from_wholesale_page');
 
 // get wholesale prices 
 

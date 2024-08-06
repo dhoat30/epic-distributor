@@ -2004,6 +2004,11 @@ class WooGallery {
 
       if (this.$largeImage.length && window.matchMedia('(min-width: 1250px)').matches) {
         this.zoomer = this.$largeImageContainer.find('img');
+        // this.bindLargeImageContainerClick();
+        this.$largeImage.on({
+          'mousemove touchmove': e => this.zoom(e),
+          'mouseleave': e => this.resetImage(e)
+        });
       }
       this.initializeEvents();
     }
@@ -2011,11 +2016,6 @@ class WooGallery {
   initializeEvents() {
     this.bindGalleryImageClicks();
     this.bindVariationChanges();
-    // this.bindLargeImageContainerClick();
-    this.$largeImage.on({
-      'mousemove touchmove': e => this.zoom(e),
-      'mouseleave': e => this.resetImage(e)
-    });
   }
   bindGalleryImageClicks() {
     const $galleryImages = $('.single .gallery li img');
