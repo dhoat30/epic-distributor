@@ -1,7 +1,10 @@
 <div class="top-banner ">
     <div class="wrapper row-container">
 
-        <?php $uspData =  get_field('top_bar_usp', 'option'); 
+        <?php 
+        if (function_exists('get_field')) {
+
+        $uspData =  get_field('top_bar_usp', 'option'); 
                     if(!empty($uspData) ){ 
                         $uspText = $uspData['text'];
                         $uspBtnLabel  = $uspData['link']['title'];
@@ -13,7 +16,7 @@
         </div>
         <?php
                     }
-                   
+                }
                 ?>
 
     </div>

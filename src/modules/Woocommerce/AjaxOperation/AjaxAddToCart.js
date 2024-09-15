@@ -7,7 +7,7 @@ class AjaxAddToCart {
 
         $('.single form.cart button[type="submit"]').on('click', this.addToCart.bind(this));
         // Correctly bind `this` for loopAddToCart
-        $('.loop-add-to-cart-btn-wrapper .add-to-cart-button').on('click', this.loopAddToCart.bind(this));
+        $(document).on('click', '.loop-add-to-cart-btn-wrapper .add-to-cart-button', this.loopAddToCart.bind(this));
     }
 
 

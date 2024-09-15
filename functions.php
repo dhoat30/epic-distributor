@@ -223,3 +223,13 @@ return '';
 }
 
 add_shortcode('webduel_toc', 'webduel_toc_shortcode');
+
+// Change the sender email
+add_filter('wp_mail_from', function ($email) {
+    return 'admin@epicdistributors.co.nz'; // Replace with your desired email address
+});
+
+// Change the sender name
+add_filter('wp_mail_from_name', function ($name) {
+    return 'Epic Distributors'; // Replace with your desired sender name
+});

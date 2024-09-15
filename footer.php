@@ -127,18 +127,24 @@
             $socialMediaData = get_field('social_links', 'option');
             if(!empty($socialMediaData)){ 
                 ?>
-            <div class="social-media-wrapper">
-                <?php 
+            <div class="social-media-container">
+                <div class="h5 title">
+                    GET SOCIAL
+                </div>
+                <div class="social-media-wrapper">
+
+                    <?php 
                 foreach($socialMediaData as $socialMedia){
                     ?>
-                <a class="item" href="<?php echo $socialMedia['link']; ?>" target="_blank" rel="nofollow">
-                    <img src="<?php echo $socialMedia['social_media_icon']['url']; ?>"
-                        alt="<?php echo $socialMedia['social_media_name']; ?>" width="40px" height="40px" />
-                </a>
-                <?php
+                    <a class="item" href="<?php echo $socialMedia['link']; ?>" target="_blank" rel="nofollow">
+                        <img src="<?php echo $socialMedia['social_media_icon']['url']; ?>"
+                            alt="<?php echo $socialMedia['social_media_name']; ?>" width="40px" height="40px" />
+                    </a>
+                    <?php
                     }
                     ?>
 
+                </div>
             </div>
             <?php 
             }

@@ -139,8 +139,8 @@ function items_in_pack(){
        return; 
     }
 
-    $price_including_tax = $product->get_price_including_tax();
-    $price_excluding_tax = $product->get_price_excluding_tax();
+    $price_including_tax = wc_get_price_including_tax($product);
+    $price_excluding_tax = wc_get_price_excluding_tax($product);
 
     if (isset($_COOKIE['show_gst']) && $_COOKIE['show_gst'] === 'inclusive') {
         $calculatedPrice =  $price_including_tax;
@@ -216,7 +216,8 @@ function add_lazy_loading_to_woocommerce_images($attr, $attachment, $size) {
 }
 add_filter('wp_get_attachment_image_attributes', 'add_lazy_loading_to_woocommerce_images', 10, 3);
 
-// add toggle button to navbar 
+
+// add GST toggle button to navbar 
 add_action('webduel_gst_toggle', 'gst_toggle_button', 15);
 
 function gst_toggle_button() {
@@ -224,15 +225,15 @@ function gst_toggle_button() {
 <div class="gst-toggle">
     <label for="gstToggle" class="body2">
         <?php
- echo isset($_COOKIE['show_gst']) && $_COOKIE['show_gst'] === 'inclusive' ? __('PRICES INC. GST', 'webduelTheme'):__('PRICES EXCL. GST', 'webduelTheme'); ?>
+ echo isset($_COOKIE['show_gst']) && $_COOKIE['show_gst'] === 'exclusive' ? __('PRICES EXCL. GST', 'webduelTheme'): __('PRICES INC. GST', 'webduelTheme'); ?>
 
     </label>
 
     <label class="switch">
         <input type="checkbox" class="gst-toggle-btn" id="gstToggle"
-            <?php echo isset($_COOKIE['show_gst']) && $_COOKIE['show_gst'] === 'inclusive' ? 'checked' : ''; ?>>
+            <?php echo isset($_COOKIE['show_gst']) && $_COOKIE['show_gst'] === 'exclusive' ? '' : 'checked'; ?>>
         <span
-            class="slider round  <?php echo isset($_COOKIE['show_gst']) && $_COOKIE['show_gst'] === 'inclusive' ? 'active' : ''; ?>"></span>
+            class="slider round  <?php echo isset($_COOKIE['show_gst']) && $_COOKIE['show_gst'] === 'exclusive' ? '' : 'active'; ?>"></span>
     </label>
 </div>
 <script>
@@ -259,20 +260,20 @@ jQuery(document).ready(function($) {
 // here we check if the inc gst cookie is set and if it is we update the woocommerce settings to display the price inclusive of gst
 add_action('init', 'adjust_gst_display_settings');
 function adjust_gst_display_settings() {
-    if (isset($_COOKIE['show_gst']) && $_COOKIE['show_gst'] === 'inclusive') {
-        update_option('woocommerce_tax_display_shop', 'incl');
-        update_option('woocommerce_tax_display_cart', 'incl');
-    } else {
+    if (isset($_COOKIE['show_gst']) && $_COOKIE['show_gst'] === 'exclusive') {
         update_option('woocommerce_tax_display_shop', 'excl');
         update_option('woocommerce_tax_display_cart', 'excl');
+    } else {
+        update_option('woocommerce_tax_display_shop', 'incl');
+        update_option('woocommerce_tax_display_cart', 'incl');
     }
 }
     // here is the code to display the price suffix based on the cookie value
     function get_price_suffix() {
-        if (isset($_COOKIE['show_gst']) && $_COOKIE['show_gst'] === 'inclusive') {
-            return " incl GST"; // Include GST in price display
-        } else {
+        if (isset($_COOKIE['show_gst']) && $_COOKIE['show_gst'] === 'exclusive') {
             return " excl GST"; // Exclude GST from price display
+        } else {
+            return " incl GST"; // Include GST in price display
         }
     }
    // Add the GST suffix to product prices
@@ -292,3 +293,21 @@ return $price . $suffix;
     }
    
     // truncate product title in loop sections
+
+
+    // hide uncategorised products form the archive pages 
+    add_action('pre_get_posts', 'exclude_uncategorized_from_archives');
+function exclude_uncategorized_from_archives($query) {
+    if ( ! is_admin() && $query->is_main_query() && is_post_type_archive('product') ) {
+        $tax_query = (array) $query->get('tax_query');
+        
+        $tax_query[] = array(
+            'taxonomy' => 'product_cat',
+            'field'    => 'slug',
+            'terms'    => array('uncategorized'), // Change this to the category slug you want to exclude
+            'operator' => 'NOT IN',
+        );
+        
+        $query->set('tax_query', $tax_query);
+    }
+}

@@ -2,7 +2,7 @@
 .onsale {
   background-color: var(--light-primary-container) !important;
   color: var(--light-on-primary-container) !important;
-  z-index: 100 !important;
+  z-index: 1000 !important;
   line-height: 0 !important;
   min-height: 0 !important;
   min-width: 0 !important;
@@ -602,26 +602,26 @@
       letter-spacing: 0.03rem;
       font-weight: 300;
       margin: 8px 0;
-      ul {
-        list-style: disc;
-        margin-left: 32px;
-        margin-top: 8px;
-        column-count: 2;
-        column-gap: 100px;
-        margin-bottom: 8px;
-        @media (max-width: 700px) {
-          column-count: 1;
-          margin-left: 24px;
-        }
+    }
+    ul {
+      list-style: disc;
+      margin-left: 32px;
+      margin-top: 8px;
+      // column-count: 2;
+      // column-gap: 100px;
+      margin-bottom: 8px;
+      @media (max-width: 700px) {
+        column-count: 1;
+        margin-left: 24px;
       }
-      ol {
-        margin-left: 32px;
-        margin-top: 8px;
-        column-count: 2;
-        column-gap: 100px;
-        @media (max-width: 700px) {
-          column-count: 1;
-        }
+    }
+    ol {
+      margin-left: 32px;
+      margin-top: 8px;
+      // column-count: 2;
+      // column-gap: 100px;
+      @media (max-width: 700px) {
+        column-count: 1;
       }
     }
     table {
@@ -673,7 +673,7 @@
   }
   .attributes-wrapper {
     border-radius: 12px;
-    padding: 24px 40px 40px 40px;
+    padding: 16px 16px 16px 16px;
 
     @media (max-width: 600px) {
       padding: 16px !important;

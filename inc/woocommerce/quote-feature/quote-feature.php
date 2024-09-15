@@ -58,7 +58,8 @@ $product = wc_get_product($product_id);
 $product_details = array(
     'id' => $product_id,
     'title' => $product->get_name(),
-    'image' =>  wp_get_attachment_image_url($product->get_image_id(), "woocommerce_single")
+    'image' =>  wp_get_attachment_image_url($product->get_image_id(), "woocommerce_single"), 
+    'price' => floatval($product->get_price()), // Ensure the price is a number
 );
 // Convert the array into a JSON string
 $product_details_json = json_encode($product_details);

@@ -7,7 +7,7 @@ add_action('woocommerce_after_single_product', function() {
     <div class="tab-links">
         <div class="active tab-link-wrapper"><a class="subtitle1" href="#tab1">Description</a></div>
         <div class="tab-content active">
-            <div id="tab1" class="tab active">
+            <div id="tab1" class="tab active description-wrapper">
                 <?php
                // product description 
                     webduel_product_description_HTML();
@@ -87,12 +87,7 @@ function webduel_product_description_HTML(){
 
 
     if (!empty($product->get_description())) {
-        echo '
-    <div class="description-wrapper">
-        <div class="content description">
-        '. $product->get_description().'
-        </div> 
-    </div>'; 
+        echo  the_content(); 
     }
 }
 function webduel_product_warranty_HTML($warrantyInfo){ 

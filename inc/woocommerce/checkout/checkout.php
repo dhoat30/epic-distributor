@@ -164,3 +164,39 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 }
 add_action('wp_footer', 'add_google_places_autocomplete');
+
+
+// shipping based pricing overide 
+add_filter('woocommerce_package_rates', 'custom_shipping_class_adjustments', 10, 2);
+
+function custom_shipping_class_adjustments($rates, $package) {
+    $has_heavy_items = false;
+
+    // Loop through cart items to check for the 'heavy-items' shipping class
+    foreach (WC()->cart->get_cart() as $cart_item) {
+        $product = $cart_item['data'];
+        if (has_term('heavy', 'product_shipping_class', $product->get_id())) {
+            $has_heavy_items = true;
+            break;
+        }
+    }
+
+    // If the cart contains heavy items, remove all shipping methods and add custom notice
+    if ($has_heavy_items) {
+        // Remove all existing shipping rates
+        $rates = array();
+
+        // Create a new shipping rate object with a notice
+        $free_shipping = new WC_Shipping_Rate(
+            'free_shipping_heavy_items', // Rate ID
+            __('Shipping fee will be calculated manually by our sales manager and added in the final invoice.', 'woocommerce'), // Label
+            0, // Cost
+            array(), // Taxes
+            'free_shipping' // Method ID
+        );
+
+        $rates['free_shipping_heavy_items'] = $free_shipping;
+    }
+
+    return $rates;
+}

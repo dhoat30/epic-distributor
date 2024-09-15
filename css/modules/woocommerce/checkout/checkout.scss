@@ -96,3 +96,33 @@
     }
   }
 }
+
+// thanks you page
+.woocommerce-order {
+  background-color: var(--light-surface-container);
+  border: 1px solid var(--light-outline-variant);
+  border-radius: 12px;
+  padding: 16px 24px;
+  .woocommerce-order-overview {
+    li {
+      border-right-style: solid !important;
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+      &:last-of-type {
+        border: none !important;
+      }
+      strong {
+        font-weight: 500;
+        font-size: 1rem !important;
+      }
+    }
+  }
+  .woocommerce-order-details,
+  .woocommerce-columns--addresses {
+    h2 {
+      font-size: 1.5rem !important;
+      font-weight: 600 !important;
+      margin-bottom: 8px !important;
+    }
+  }
+}

@@ -44,7 +44,6 @@
         margin: 0 16px 16px 16px;
       }
       h1 {
-        text-align: center;
         margin: 0 15px 0 0;
         font-weight: var(--semiBold);
         color: var(--darkGrey);
@@ -52,18 +51,19 @@
 
         color: var(--light-on-surface);
       }
-
+      h3 {
+        margin: 8px 0;
+      }
       p,
       li {
-        text-align: center;
         color: var(--light-on-surface-variant);
         font-size: 1rem;
         line-height: 1.5rem;
         letter-spacing: 0.03rem;
         font-weight: 300;
+        margin-bottom: 8px;
       }
       ul {
-        text-align: center;
         list-style: disc;
         margin-left: 24px;
       }

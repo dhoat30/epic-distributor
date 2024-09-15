@@ -48,7 +48,7 @@ add_action('woocommerce_single_product_summary', function() {
    
     custom_stock_availability_display(); 
     echo "</div>";
-}, 20);
+}, 10);
 
 // Add custom stock availability display
 function custom_stock_availability_display() {
@@ -131,9 +131,9 @@ function my_remove_all_product_tabs($tabs)
 }
 
 
-// remove short description on single product page
+//remove short description on single product page
 // remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
-// add the short description 
+// //add the short description 
 // add_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 10);
 
 
@@ -220,3 +220,53 @@ get_template_part('inc/templates/product-description-tabs');
 
 // add product resources 
 get_template_part('inc/templates/product-resources');
+
+// add youtube video under product short description
+add_action( 'woocommerce_single_product_summary', 'custom_lazy_load_youtube_video', 25 );
+
+function custom_lazy_load_youtube_video() {
+    global $post;
+    
+    // Fetch the YouTube video ID from the ACF field
+    $youtube_video_id = get_field('youtube_video_id', $post->ID);
+    
+    if ( $youtube_video_id ) {
+        // YouTube thumbnail URL
+        $youtube_thumbnail_url = 'https://i.ytimg.com/vi/' . esc_attr( $youtube_video_id ) . '/hq720.jpg';
+
+        echo '<div class="product-video">';
+     
+        echo '<div class="youtube-video-wrapper" data-video-id="' . esc_attr( $youtube_video_id ) . '" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; background:url(' . esc_url( $youtube_thumbnail_url ) . ') no-repeat center center; background-size:cover; cursor:pointer;">';
+        echo '<img src="' . esc_url( $youtube_thumbnail_url ) . '" style="width:100%; height:auto; display:block;" alt="youtube Video thumbnail" loading="lazy">';
+        echo '<div class="play-button" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:64px; color:white;">&#9658;</div>';
+        echo '</div>';
+        echo '</div>';
+
+        // Add the script directly after the hook
+        ?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var videoWrappers = document.querySelectorAll(".youtube-video-wrapper");
+    videoWrappers.forEach(function(wrapper) {
+        wrapper.addEventListener("click", function() {
+            var videoId = wrapper.getAttribute(
+                'data-video-id'); // Get video ID from the data attribute
+            var iframe = document.createElement("iframe");
+            iframe.setAttribute("src", "https://www.youtube.com/embed/" + videoId +
+                "?autoplay=1&rel=0");
+            iframe.setAttribute("frameborder", "0");
+            iframe.setAttribute("allow", "autoplay; encrypted-media");
+            iframe.setAttribute("allowfullscreen", "1");
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.position = "absolute";
+            wrapper.innerHTML = "";
+            wrapper.appendChild(iframe);
+            wrapper.style.background = "none";
+        });
+    });
+});
+</script>
+<?php 
+    }
+}

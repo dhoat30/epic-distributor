@@ -92,17 +92,11 @@ function custom_search_by_sku($search, $query) {
     return $search;
 }
 
-function my_facetwp_indexer_post($post_id, $post) {
-    if ('product' === $post->post_type) {
-        $sku = get_post_meta($post_id, '_sku', true);
-        if (!empty($sku)) {
-            FWP()->indexer->index_row(array(
-                'post_id' => $post_id,
-                'facet_name' => 'sku',
-                'facet_value' => $sku,
-                'facet_display_value' => $sku,
-            ));
-        }
+// disable facet wp on checkout page 
+function disable_facetwp_on_checkout($is_enabled) {
+    if (is_checkout()) {
+        return false;
     }
+    return $is_enabled;
 }
-add_action('facetwp_indexer_post', 'my_facetwp_indexer_post', 10, 2);
+add_filter('facetwp_is_main_query', 'disable_facetwp_on_checkout');

@@ -20,12 +20,14 @@
 
     <?php wp_head(); ?>
 
+    <!-- add canonical -->
+
+
 
     <!-- google merchante center verification  -->
-    <!-- <meta name="google-site-verification" content="MWqy-NjUuyKLYN1mhia3eZLW6u9WmtQzjatA5DyXU9E" /> -->
+    <meta name="google-site-verification" content="IxVvsRYQIEL6VO9tV7tcUKNstYTPaoAabg6mcNNeJ9M" />
     <!-- Google Tag Manager -->
-    <!-- Google Tag Manager -->
-    <!-- <script>
+    <script>
     (function(w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({
@@ -39,8 +41,8 @@
         j.src =
             'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
         f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-TTP7MHPP');
-    </script> -->
+    })(window, document, 'script', 'dataLayer', 'GTM-KZWLS5KS');
+    </script>
     <!-- End Google Tag Manager -->
     <!-- End Google Tag Manager -->
 
@@ -48,8 +50,8 @@
 
 <body id="header" <?php body_class(); ?>>
     <!-- Google Tag Manager (noscript) -->
-    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTP7MHPP" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript> -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZWLS5KS" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <section class="header desktop-header">

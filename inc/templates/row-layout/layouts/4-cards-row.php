@@ -48,8 +48,6 @@ switch ($button_color) {
        $wideCardSalePrice = $wideCardData['content_group']['price']['sale_price'];
        $wideCardButtonColorArr = webduel_set_button_color_four_cards_row($wideCardButtonColor);
     }
-
-
     // small card first
     $smallCardFirstData = get_sub_field('small_card');
     $smallCardFirstLink = $smallCardFirstData['link']['url'];
@@ -118,7 +116,7 @@ switch ($button_color) {
                                 srcset="<?php echo $wideCardDesktopImage['sizes']['large']; ?>">
                             <source media="(min-width:500px)"
                                 srcset="<?php echo $wideCardMobileImage['sizes']['large']; ?>">
-                            <img src="<?php echo $wideCardMobileImage['sizes']['medium']; ?>"
+                            <img src="<?php echo $wideCardMobileImage['sizes']['medium_large']; ?>"
                                 alt="<?php echo $wideCardMobileImage['alt']; ?>" width="100%" height="400px"
                                 class="img-fill">
                         </picture>
@@ -171,7 +169,7 @@ switch ($button_color) {
                                     srcset="<?php echo $smallCardFirstDesktopImage['sizes']['large']; ?>">
                                 <source media="(min-width:500px)"
                                     srcset="<?php echo $smallCardFirstDesktopImage['sizes']['large']; ?>">
-                                <img src="<?php echo $smallCardFirstDesktopImage['sizes']['medium']; ?>"
+                                <img src="<?php echo $smallCardFirstDesktopImage['sizes']['medium_large']; ?>"
                                     alt="<?php echo $smallCardFirstDesktopImage['alt']; ?>" width="100%" height="400px"
                                     class="img-fill">
                             </picture>
@@ -238,7 +236,7 @@ switch ($button_color) {
                                     srcset="<?php echo $smallCardSecondDesktopImage['sizes']['large']; ?>">
                                 <source media="(min-width:500px)"
                                     srcset="<?php echo $smallCardSecondDesktopImage['sizes']['large']; ?>">
-                                <img src="<?php echo $smallCardSecondDesktopImage['sizes']['medium']; ?>"
+                                <img src="<?php echo $smallCardSecondDesktopImage['sizes']['medium_large']; ?>"
                                     alt="<?php echo $smallCardSecondDesktopImage['alt']; ?>" width="100%" height="400px"
                                     class="img-fill">
                             </picture>
@@ -318,7 +316,7 @@ switch ($button_color) {
                                 srcset="<?php echo $verticalCardDesktopImage['sizes']['large']; ?>">
                             <source media="(min-width:500px)"
                                 srcset="<?php echo $verticalCardDesktopImage['sizes']['large']; ?>">
-                            <img src="<?php echo $verticalCardDesktopImage['sizes']['medium']; ?>"
+                            <img src="<?php echo $verticalCardDesktopImage['sizes']['medium_large']; ?>"
                                 alt="<?php echo $verticalCardDesktopImage['alt']; ?>" width="100%" height="400px"
                                 class="img-fill">
                         </picture>
